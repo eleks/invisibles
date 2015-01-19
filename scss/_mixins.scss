@@ -1,0 +1,79 @@
+@mixin transition($paremeters) {
+  -webkit-transition: $paremeters;
+  -moz-transition: $paremeters;
+  -o-transition: $paremeters;
+  transition: $paremeters;
+}
+@mixin transition-delay($paremeters) {
+  -webkit-transition-delay: $paremeters;
+  -moz-transition-delay: $paremeters;
+  -o-transition-delay: $paremeters;
+  transition-delay: $paremeters;
+}
+@mixin blur($paremeters) {
+  -webkit-filter: blur($paremeters);
+  -moz-filter: blur($paremeters);
+  filter: blur($paremeters);
+}
+@mixin scale($paremeters) {
+  -webkit-transform: scale($paremeters);
+  -moz-transform: scale($paremeters);
+  -ms-transform: scale($paremeters);
+  -o-transform: scale($paremeters);
+  transform: scale($paremeters);
+}
+@mixin rotate($paremeters) {
+  -webkit-transform: rotate($paremeters);
+  -moz-transform: rotate($paremeters);
+  -ms-transform: rotate($paremeters);
+  -o-transform: rotate($paremeters);
+  transform: rotate($paremeters);
+}
+@mixin translate($paremeter1, $paremeter2) {
+  -webkit-transform: translate($paremeter1, $paremeter2);
+  -moz-transform: translate($paremeter1, $paremeter2);
+  -ms-transform: translate($paremeter1, $paremeter2);
+  -o-transform: translate($paremeter1, $paremeter2);
+  transform: translate($paremeter1, $paremeter2);
+}
+@mixin translateY($paremeters) {
+  -webkit-transform: translateY($paremeters);
+  -moz-transform: translateY($paremeters);
+  -ms-transform: translateY($paremeters);
+  -o-transform: translateY($paremeters);
+  transform: translateY($paremeters);
+}
+/*
+
+@mixin translateX($paremeters) {
+  -webkit-transform: translateX($paremeters);
+  -moz-transform: translateX($paremeters);
+  -ms-transform: translateX($paremeters);
+  -o-transform: translateX($paremeters);
+  transform: translateX($paremeters);
+}
+
+*/
+
+
+/*
+//Sprite for small icons
+$icons: sprite-map("icons*/
+/*.png", $layout: vertical, $spacing:100px);
+$icons-2x: sprite-map("icons-2x*/
+/*.png", $layout: vertical, $spacing:100px);
+
+
+//Sprite mixin, works perfectly with standard defines
+@mixin use-sprite($sprite) {
+  background-image: sprite-url($icons);
+  background-position: sprite-position($icons, $sprite);
+  background-repeat: no-repeat;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min--moz-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 144dppx) {
+    background-image: sprite-url($icons-2x);
+    background-size: (image-width(sprite-path($icons-2x)) / 2) (image-height(sprite-path($icons-2x)) / 2);
+    background-position: round(nth(sprite-position($icons-2x, $sprite), 1) / 2) round(nth(sprite-position($icons-2x, $sprite), 2) / 2);
+  }
+}
+*/
