@@ -337,6 +337,7 @@
 
       $mail_input.on('keypress', function(e){
         if ( e.which == 13 ) {
+          e.preventDefault();
           verification();
         }
 
