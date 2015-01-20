@@ -820,11 +820,10 @@ h2.small_title {
   }
 }
 .subscribe_form {
-  margin-bottom: 25px;
+
   position: relative;
 }
 .error_message {
-  bottom: 0;
   color: #ffcaca;
   font-size: 10px;
   line-height: 10px;
@@ -832,6 +831,7 @@ h2.small_title {
   letter-spacing: 6px;
   position: absolute;
   right: 0;
+  top: 40px;
   text-transform: uppercase;
 }
 #mail_input {
@@ -843,7 +843,7 @@ h2.small_title {
   font-family: 'ProximaNovaLight';
   font-size: 28px;
   line-height: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   outline: none;
   width: 220px;
   &::-webkit-input-placeholder {
