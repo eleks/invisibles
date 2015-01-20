@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!--[if lt IE 9]>
+<html class="lt-ie9"> <![endif]-->
 <html>
 <head>
   <meta charset="utf-8">
@@ -7,13 +9,24 @@
   <meta name="keywords" content="enterprise mobility, mobile applications, ELEKS, digital storytelling, augmented reality, mobile software development, custom mobile app development, mobile app development company, wearable technology">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta name="author" content="Taras Peretiatko">
-  <link rel="stylesheet" href="http://i.icomoon.io/public/temp/28a7183826/UntitledProject/style.css">
   <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
+<!--[if lt IE 9]>
+<div class="old-ie">
+  <div class="old-ie-wrapper">
+    <div class="ie_icon">
+      <img src="images/ie_icon.png" alt="ie icon"/>
+    </div>
+    <h3>The browser you are using is out of date.</h3>
+    <p>For viewing this site and any other with greate experince update your browser to the <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">latest version</a></p>
+  </div>
+</div>
+<![endif]-->
 <header>
   <div class="container">
     <div class="header_inner">
+      <div class="icon-menu toggle_menu"></div>
       <nav class="top-menu">
         <ul id="menu" class="list">
           <li data-menuanchor="home" class="home active"><a href="#home">Invisibles</a></li>
@@ -29,10 +42,8 @@
 
 <div id="fullpage">
   <div class="section" id="section_home">
-    <div class="container">
-      <h1 class="big_title">Meet the</h1>
-      <div class="play_video">Future of Wearable Technology</div>
-    </div>
+    <h1 class="big_title">Meet the</h1>
+    <div class="play_video">Future of Wearable Technology</div>
   </div>
   <div class="section" id="section_about">
     <div class="container step_1">
@@ -107,7 +118,7 @@
             <h3>RING</h3>
           </div>
           <div>
-            <div class="tips">&nbsp;</div>
+            <div class="tips">Invisible</div>
             <h3>TRACKER</h3>
           </div>
         </div>
@@ -116,7 +127,7 @@
     </div>
     <div class="preorder_now_link">
       <h2 class="small_title">PREORDER NOW</h2>
-      <div class="desc">The shipments start early 2015 and you’re welcome to preorder them right now!</div>
+      <div class="desc">The shipments start early 2015 and you’re welcome to preorder Invisibles right now!</div>
     </div>
     <div class="share">
       <div class="social-buttons">
@@ -141,22 +152,24 @@
 
 <!--Popup Video-->
 <div class="popup popup_video">
-  <div class="close close_popup_video"></div>
+  <div class="icon-close close_popup_video"></div>
   <iframe width="560" height="315" src="//www.youtube.com/embed/e3-pkKYmt9w" frameborder="0" allowfullscreen></iframe>
 </div>
 <!--End Popup Video-->
 
 <!-- Popup subscribe form -->
 <div class="popup popup_form t_center">
-  <div class="close close_popup_form"></div>
+  <div class="icon-close close_popup_form"></div>
   <!--Popup subscribe form Step 1-->
   <div class="fp-section fp-table step_1">
     <h2 class="small_title">BECOME EARLY ADOPTER</h2>
     <div class="desc">You get an augmented experience that never distracts you from the real world. Invisibles are seamlessly integrated into your life to help you focus on your goals.</div>
     <form action="#" class="subscribe_form">
       <input id="mail_input" type="email" value="" placeholder="Enter your email">
+      <div>
+        <input type="button" value="NOTIFY ME" id="notify_me" class="btn"/>
+      </div>
     </form>
-    <div id="notify_me" class="btn">NOTIFY ME</div>
   </div>
 
   <!--Popup subscribe form Step 2-->
@@ -201,6 +214,15 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    /*show/hide menu*/
+    $('.toggle_menu').click(function () {
+      $(".top-menu").slideToggle();
+      $(this).toggleClass('open');
+    });
+    $('.close_popup_video').click(function () {
+      $(".popup_video").fadeOut();
+    });
+
     /*show/hide video*/
     $('.play_video').click(function () {
       $(".popup_video").fadeIn();
@@ -210,7 +232,8 @@
     });
 
     /*show/hide form*/
-    var $mail_input = $('#mail_input');
+    var $mail_input = $('#mail_input'),
+        $close_popup_form = $('.popup_form .close_popup_form');
     $('.preorder_now_link').click(function () {
       $(".popup_form").fadeIn();
       setTimeout( function() {
@@ -221,14 +244,15 @@
       $(".popup_video").fadeOut();
     });
 
-    $('.close_popup_form').click(function () {
+    $close_popup_form.click(function () {
       $(".popup_form").fadeOut();
     });
 
 
     $('#fullpage').fullpage({
       anchors: ['home', 'about', '', '', 'features', 'product'],
-      menu: '#menu'
+      menu: '#menu',
+      responsive: 300
     });
 
     $('.single-item').slick();
@@ -253,11 +277,11 @@
     /*Email validation*/
     $(function() {
 
-      var vd_send  = $('#notify_me'),
+      var $vd_send  = $('#notify_me'),
           $error_msg = $('<div>', {class: 'error_message'}),
-          step_1 = $('.popup_form .fp-section.step_1'),
-          step_2 = $('.popup_form .fp-section.step_2'),
-          step_3 = $('.popup_form .fp-section.step_3');
+          $step_1 = $('.popup_form .fp-section.step_1'),
+          $step_2 = $('.popup_form .fp-section.step_2'),
+          $step_3 = $('.popup_form .fp-section.step_3');
 
       $error_msg.html('wrong email FROMAT');
 
@@ -266,18 +290,16 @@
         return re.test(email);
       }
 
-      vd_send.on('click', function(e) {
-        e.preventDefault();
+      function verification() {
+        var email = $mail_input.val();
 
-        var email   = $mail_input.val();
-
-        if (email == ''|| !validateEmail(email)) {
-          $mail_input.each(function() {
-            if ( !$(this).val() ) {
+        if (email == '' || !validateEmail(email)) {
+          $mail_input.each(function () {
+            if (!$(this).val()) {
               $(this).addClass('error');
             }
           });
-          if ( !validateEmail(email) ) {
+          if (!validateEmail(email)) {
             $mail_input.addClass('error');
             $mail_input.parent().append($error_msg);
           }
@@ -285,29 +307,43 @@
         }
 
         $('#mce-EMAIL').val(email);
-        setTimeout( function() {
-          step_1.fadeOut(1000);
-          step_2.fadeIn(1000);
+        setTimeout(function () {
+          $step_1.fadeOut(1000);
+          $close_popup_form.fadeOut(1000);
+          $step_2.fadeIn(1000);
         }, 500);
 
-        setTimeout( function() {
-          step_2.fadeOut(1000);
-          step_3.fadeIn(1000);
+        setTimeout(function () {
+          $step_2.fadeOut(1000);
+          $step_3.fadeIn(1000);
         }, 3000);
 
-        setTimeout( function() {
-          step_3.addClass('show_verification_form');
+        setTimeout(function () {
+          $step_3.addClass('show_verification_form');
         }, 4500);
+      };
 
+
+
+      $vd_send.on('click', function(e){
+        e.preventDefault();
+        verification();
       });
 
-      $mail_input.on('focus', function() {
+      $mail_input.on('focus keypress', function() {
         $(this).removeClass('error');
         $error_msg.remove();
       });
 
+      $mail_input.on('keypress', function(e){
+        if ( e.which == 13 ) {
+          verification();
+        }
+
+      });
+
       $('#mc-embedded-subscribe, .no_notify').click(function () {
-        step_3.removeClass('show_verification_form')
+        $step_3.removeClass('show_verification_form')
       });
 
     });
