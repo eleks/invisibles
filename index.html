@@ -4,9 +4,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>ELEKS Invisibles | revolutionary approach to mobile software development</title>
-  <meta name="description" content="Wearable & mobile technologies reimagined with ELEKS Invisibles. Enjoy gorgeous functionality of augmented reality software. Efficient and Invisible!">
-  <meta name="keywords" content="enterprise mobility, mobile applications, ELEKS, digital storytelling, augmented reality, mobile software development, custom mobile app development, mobile app development company, wearable technology">
+  <title>Invisibles – the future of wearables| ELEKS</title>
+  <meta name="description" content="Wearable & mobile technology reimagined with Invisibles by ELEKS. Check out how we make technology disappear. Meet the unexpected future of wearables!">
+  <meta name="keywords" content="Invisibles, wearables, mobility, ELEKS, mobile applications, digital, augmented reality, mobile technology, mobile app development, wearable technology, user experience, smart watch, smart ring">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta name="author" content="Taras Peretiatko">
   <link rel="stylesheet" href="stylesheets/main.css">
@@ -48,7 +48,7 @@
   <div class="section" id="section_about">
     <div class="container step_1">
       <div class="fp-section fp-table step_1">
-        <h1 class="big_title">Let THe Technology Disappear</h1>
+        <h1 class="big_title">Let The Technology Disappear</h1>
       </div>
     </div>
     <div class="container step_2">
@@ -111,7 +111,7 @@
           </div>
           <div>
             <div class="tips">Invisible & SMART</div>
-            <h3>Glasess</h3>
+            <h3>Glasses</h3>
           </div>
           <div>
             <div class="tips">Invisible & SMART</div>
@@ -133,16 +133,16 @@
       <div class="social-buttons">
         <ul class="list">
           <li>
-            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=[http://invisibles.eleks.com/]&title=[TITLE for INVISIBLES]">Facebook</a>
+            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
           </li>
           <li>
-            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=[TITLE for INVISIBLES]+[http://invisibles.eleks.com]">Twitter</a>
+            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
           </li>
           <li>
-            <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=[http://invisibles.eleks.com]">Google plus</a>
+            <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
           </li>
           <li>
-            <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=[http://invisibles.eleks.com]&title=[TITLE for INVISIBLES]">LinkedIn</a>
+            <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=http://invisibles.eleks.com">LinkedIn</a>
           </li>
         </ul>
       </div>
@@ -180,7 +180,7 @@
   <!--Popup subscribe form Step 3-->
   <div class="fp-section fp-table step_3">
     <h1 class="big_title">BUT WE CAN MAKE TECHNOLOGY <span>INVISIBLE</span></h1>
-    <a class="btn" href="http://eleks.com">FIND OUT MORE ABOUT ELEKS</a>
+    <a id="eleks_link" class="btn" href="http://eleks.com">FIND OUT MORE ABOUT ELEKS</a>
     <div class="verification_form">
       <div class="desc">We didn’t use your email, yet :) Whant to subscribe to our newsletter?</div>
       <!-- Begin MailChimp Signup Form -->
@@ -283,7 +283,7 @@
           $step_2 = $('.popup_form .fp-section.step_2'),
           $step_3 = $('.popup_form .fp-section.step_3');
 
-      $error_msg.html('wrong email FROMAT');
+      $error_msg.html('wrong email format');
 
       function validateEmail(email) {
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -321,6 +321,9 @@
         setTimeout(function () {
           $step_3.addClass('show_verification_form');
         }, 4500);
+
+        /*Count enter email for subscribe form*/
+        ga('send', 'event', 'button', 'click', 'enter_email');
       };
 
 
@@ -364,6 +367,21 @@
   /*Count click for show subscribe form*/
   $('.preorder_now_link').on('click', function() {
     ga('send', 'event', 'button', 'click', 'preorder_now');
+  });
+
+  /*Count click for approve email*/
+  $('#mc-embedded-subscribe').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'approve_email');
+  });
+
+  /*Count click for no notify*/
+  $('.verification_form .no_notify').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'no_notify');
+  });
+
+  /*Count click for eleks link*/
+  $('#eleks_link').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'eleks_link');
   });
 </script>
 <!--End Google Annalytics-->
