@@ -42,7 +42,16 @@
 
 <div id="fullpage">
   <div class="section" id="section_home">
+    <div class="video_wrap">
+      <div class="video_wrap">
+        <video id="cloud_video" loop autoplay preload="auto">
+          <source type="video/mp4" src="http://media.eleks.com/media/Default/invisibles/video/cloud.mp4">
+        </video>
+      </div>
+    </div>
+    <div class="masc"></div>
     <h1 class="big_title">Meet the</h1>
+    <div class="text_masc"></div>
     <div class="play_video">Future of Wearable Technology</div>
   </div>
   <div class="section" id="section_about">
@@ -249,6 +258,8 @@
     });
 
 
+
+
     $('#fullpage').fullpage({
       anchors: ['home', 'about', '', '', 'features', 'product'],
       menu: '#menu',
@@ -273,6 +284,9 @@
       centerMode: true,
       focusOnSelect: true
     });
+
+    /*Play home page video*/
+    window.onload = document.querySelector('#cloud_video').play();
 
     /*Email validation*/
     $(function() {
