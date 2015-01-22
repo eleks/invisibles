@@ -9,9 +9,29 @@
   <meta name="keywords" content="Invisibles, wearables, mobility, ELEKS, mobile applications, digital, augmented reality, mobile technology, mobile app development, wearable technology, user experience, smart watch, smart ring">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta name="author" content="Taras Peretiatko">
+  <style>
+    .preloader {
+      background-color: #fff;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      -webkit-transition: .5s;
+      -moz-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s;
+      z-index: 999999;
+    }
+    .loaded .preloader {
+      opacity: 0;
+      z-index: -1;
+    }
+  </style>
   <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
+<div class="preloader"></div>
 <!--[if lt IE 9]>
 <div class="old-ie">
   <div class="old-ie-wrapper">
@@ -215,6 +235,7 @@
 
 </div>
 
+
 <!--General scripts-->
 <script type="text/javascript" src="javascripts/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="javascripts/jquery.fullPage.min.js"></script>
@@ -286,7 +307,10 @@
     });
 
     /*Play home page video*/
-    window.onload = document.querySelector('#cloud_video').play();
+    window.onload = function() {
+      document.querySelector('#cloud_video').play();
+      $('body').addClass('loaded');
+  };
 
     /*Email validation*/
     $(function() {
