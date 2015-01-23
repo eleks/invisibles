@@ -36,6 +36,13 @@
   -o-transform: translate($paremeter1, $paremeter2);
   transform: translate($paremeter1, $paremeter2);
 }
+@mixin translateX($paremeters) {
+  -webkit-transform: translateX($paremeters);
+  -moz-transform: translateX($paremeters);
+  -ms-transform: translateX($paremeters);
+  -o-transform: translateX($paremeters);
+  transform: translateX($paremeters);
+}
 @mixin translateY($paremeters) {
   -webkit-transform: translateY($paremeters);
   -moz-transform: translateY($paremeters);

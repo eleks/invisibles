@@ -72,7 +72,9 @@
     <div class="masc"></div>
     <h1 class="big_title">Meet the</h1>
     <div class="text_masc"></div>
-    <div class="play_video">Future of Wearable Technology</div>
+    <div class="desc">Future of Wearable Technology</div>
+    <div class="play_video"></div>
+    <div class="icon-down"></div>
   </div>
   <div class="section" id="section_about">
     <div class="container step_1">
@@ -86,6 +88,7 @@
         <div class="desc">Although wearable devices are serving us well, they keep moving forward. The revolutionary technology, Invisibles, enables a whole new world of possibilities. As a result, no more worries about materials, color, design, limited battery life and the other inconveniences of wearables.</div>
       </div>
     </div>
+    <div class="icon-down"></div>
   </div>
   <div class="section" id="section_features">
     <div class="container">
@@ -117,6 +120,7 @@
         </div>
       </div>
     </div>
+    <div class="icon-down"></div>
   </div>
   <div class="section" id="section_product">
     <div class="container">
@@ -158,24 +162,24 @@
       <h2 class="small_title">PREORDER NOW</h2>
       <div class="desc">The shipments start early 2015 and you’re welcome to preorder Invisibles right now!</div>
     </div>
-    <div class="share">
-      <div class="social-buttons">
-        <ul class="list">
-          <li>
-            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
-          </li>
-          <li>
-            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
-          </li>
-          <li>
-            <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
-          </li>
-          <li>
-            <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=http://invisibles.eleks.com">LinkedIn</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  </div>
+</div>
+<div class="share">
+  <div class="social-buttons">
+    <ul class="list">
+      <li>
+        <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
+      </li>
+      <li>
+        <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
+      </li>
+      <li>
+        <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
+      </li>
+      <li>
+        <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=http://invisibles.eleks.com">LinkedIn</a>
+      </li>
+    </ul>
   </div>
 </div>
 
@@ -287,6 +291,10 @@
       responsive: 300
     });
 
+    $('.icon-down').click(function () {
+      $.fn.fullpage.moveSectionDown();
+    });
+
     $('.single-item').slick();
 
     $('.product-slider').slick({
@@ -346,8 +354,8 @@
 
         $('#mce-EMAIL').val(email);
         setTimeout(function () {
-          $step_1.fadeOut(1000);
-          $close_popup_form.fadeOut(1000);
+          $step_1.fadeOut(500);
+          $close_popup_form.fadeOut(500);
           $step_2.fadeIn(1000);
         }, 500);
 
