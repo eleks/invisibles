@@ -364,11 +364,12 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
 .slick-next:after { border-left: 11px solid #000; }
 
 /*section home*/
-#section_home .video_wrap { bottom: 0; left: 0; position: absolute; right: 0; top: 0; }
+#section_home .video_wrap { bottom: 0; left: 0; opacity: 0; position: absolute; right: 0; top: 0; -webkit-transition: 0.5s 0.2s; -moz-transition: 0.5s 0.2s; -o-transition: 0.5s 0.2s; transition: 0.5s 0.2s; }
 #section_home .video_wrap video { height: 100%; width: 100%; }
 #section_home .masc { background: url("../images/invisibles-mask.png") no-repeat center; background-size: cover; bottom: 0; left: 0; position: absolute; right: 0; top: 0; }
 #section_home .big_title { color: #c3c3c3; font-family: 'ProximaNovaLight'; font-size: 32px; font-weight: normal; letter-spacing: 25px; line-height: 35px; position: relative; text-transform: uppercase; }
 #section_home .text_masc { height: 20%; }
+#section_home.active .video_wrap { opacity: 1; }
 
 .play_video { cursor: pointer; display: inline-block; font-family: 'ProximaNovaThin', 'ProximaNovaLight'; font-size: 28px; line-height: 30px; margin: 0 10px; padding: 9px 0 11px 70px; position: relative; text-align: left; }
 .play_video:before { border-bottom: 7px solid transparent; border-left: 13px solid #fff; border-top: 7px solid transparent; content: ""; left: 21px; position: absolute; top: 18px; width: 10px; z-index: 1; }
@@ -456,10 +457,12 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
 #mail_input.error::-moz-placeholder { color: #ff0303; }
 #mail_input.error:-ms-input-placeholder { color: #ff0303; }
 
+#notify_me { outline: none; }
+
 .verification_form { background-color: #002ffb; bottom: 0; left: 0; padding: 25px; position: absolute; right: 0; -webkit-transition: 0.75s; -moz-transition: 0.75s; -o-transition: 0.75s; transition: 0.75s; -webkit-transform: translateY(100%); -moz-transform: translateY(100%); -ms-transform: translateY(100%); -o-transform: translateY(100%); transform: translateY(100%); }
 .verification_form .desc { color: #7e8cfc; margin-bottom: 15px; }
 .verification_form .sendet_input { display: none; }
-.verification_form .button, .verification_form .no_notify { background: transparent; border: 0; color: #fff; cursor: pointer; display: inline-block; font-size: 22px; letter-spacing: 10px; line-height: 30px; margin: 0 50px; padding: 0; text-transform: uppercase; }
+.verification_form .button, .verification_form .no_notify { background: transparent; border: 0; color: #fff; cursor: pointer; display: inline-block; font-size: 22px; letter-spacing: 10px; line-height: 30px; margin: 0 50px; outline: none; padding: 0; text-transform: uppercase; }
 
 .step_3.show_verification_form .verification_form { -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); transform: translateY(0); }
 
