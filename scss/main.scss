@@ -5,7 +5,7 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
-
+@import 'compass';
 @import "normalize";
 
 /* ==========================================================================
@@ -104,6 +104,8 @@ textarea {
 @import "layout";
 
 @import "mixins";
+
+@import "keyframes";
 
 @import "style";
 

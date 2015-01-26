@@ -1,0 +1,40 @@
+@include keyframe (let_the_technology) {
+  0% {
+    opacity: 0;
+  }
+
+  10%,
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframe (disappear) {
+  0%,
+  20% {
+    opacity: 0;
+  }
+
+  65%,
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframe (opacity) {
+  0% {
+    opacity: 0;
+  }
+
+ 100% {
+    opacity: 1;
+  }
+}

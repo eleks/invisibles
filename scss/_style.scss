@@ -14,21 +14,21 @@ body {
 /*header*/
 header {
   left: 0;
+  opacity: 0;
   padding: 20px 10px;
   position: fixed;
   right: 0;
   text-align: center;
   top: 0;
   z-index: 7;
-  @include transition(.5s cubic-bezier(0.87, -0.41, 0.19, 1.44) 1.5s);
-  @include translateY(-100%);
+  @include transition(1s 1.5s);
   .header_inner {
     position: relative;
   }
 }
 .loaded {
   header {
-    @include translateY(0);
+    opacity: 1;
   }
 }
 
@@ -631,15 +631,22 @@ h2.small_title {
   background-color: #000;
   h1.big_title {
     color: #fff;
+    opacity: 0;
+    span {
+      display: block;
+      opacity: 0;
+    }
   }
   h2 {
     color: #565656;
     font-size: 28px;
     font-weight: normal;
     line-height: 32px;
+    opacity: 0;
   }
   .desc {
     color: #fff;
+    opacity: 0;
   }
   .container {
     bottom: 0;
@@ -647,21 +654,24 @@ h2.small_title {
     position: absolute;
     right: 0;
     top: 0;
-    &.step_1 {
-      @include transition(0.5s 1.5s);
-    }
-    &.step_2 {
-      opacity: 0;
-      @include transition(0.5s 2s);
-    }
   }
   &.active {
     .container {
       &.step_1 {
-        opacity: 0;
+        .big_title {
+          @include animation(let_the_technology 2s 1s forwards ease-in-out);
+          span {
+            @include animation(disappear 2s 1s forwards ease-in-out);
+          }
+        }
       }
       &.step_2 {
-        opacity: 1;
+        h2 {
+          @include animation(opacity 0.25s 2.75s forwards ease-in);
+        }
+        .desc {
+          @include animation(opacity 0.25s 3.5s forwards ease-in);
+        }
       }
     }
   }
@@ -669,6 +679,9 @@ h2.small_title {
 
 /*section features*/
 #section_features {
+  .small_title {
+    opacity: 0;
+  }
   .mask {
     color: #ebebeb;
     font-family: 'ProximaNovaLight';
@@ -682,9 +695,31 @@ h2.small_title {
   .desc {
     position: relative;
   }
+  .slick-list {
+    opacity: 0;
+  }
   .slick-slide.slick-active {
     .mask {
       opacity: 1;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    opacity: 0;
+  }
+  &.active {
+    .small_title {
+      opacity: 1;
+      @include transition(0.5s .5s ease-in);
+    }
+    .slick-list {
+      opacity: 1;
+      @include transition(0.5s 1s ease-in);
+    }
+    .slick-prev,
+    .slick-next {
+      opacity: 1;
+      @include transition(0.5s 1.5s ease-in);
     }
   }
 }
@@ -698,7 +733,24 @@ h2.small_title {
     letter-spacing: 6px;
     line-height: 30px;
     margin-top: 5px;
+    opacity: 0;
     @include blur(2px);
+  }
+  .slick-slide {
+    opacity: 0;
+  }
+  &.active {
+    .slick-slide {
+      @include animation(opacity 0.25s 1.5s forwards ease-in);
+    }
+    .price {
+      @include animation(opacity 0.25s .75s forwards ease-in);
+    }
+    .slick-center {
+      @include animation(opacity 0.25s .5s forwards ease-in);
+    }
+
+
   }
 }
 .preorder_now_link {
@@ -911,7 +963,8 @@ h2.small_title {
     .big_title {
       color: #fff;
       span {
-        @include blur(5px);
+        display: block;
+        @include transition(0.5s .25s);
       }
     }
     .btn {
@@ -947,7 +1000,8 @@ h2.small_title {
   line-height: 30px;
   margin-bottom: 40px;
   outline: none;
-  width: 220px;
+  text-align: center;
+  width: 320px;
   &::-webkit-input-placeholder {
     color: #969696;
   }
@@ -988,7 +1042,7 @@ h2.small_title {
   padding: 25px;
   position: absolute;
   right: 0;
-  @include transition(0.75s);
+  @include transition(0.75s .5s);
   @include translateY(100%);
   .desc {
     color: #7e8cfc;
@@ -1004,6 +1058,7 @@ h2.small_title {
     color: #fff;
     cursor: pointer;
     display: inline-block;
+    font-family: 'ProximaNovaRegular';
     font-size: 22px;
     letter-spacing: 10px;
     line-height: 30px;
@@ -1013,8 +1068,15 @@ h2.small_title {
     text-transform: uppercase;
   }
 }
-.step_3.show_verification_form .verification_form {
-  @include translateY(0);
+.step_3.show_verification_form {
+  .big_title {
+    span {
+      @include blur(5px);
+    }
+  }
+  .verification_form {
+    @include translateY(0);
+  }
 }
 
 /*Old IE*/
