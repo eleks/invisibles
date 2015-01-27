@@ -45,8 +45,11 @@
 <![endif]-->
 <header>
   <div class="container">
+    <div class="toggle_menu">
+      <div class="toggle_menu_icon"></div>
+    </div>
+    <div id="home_link">Invisibles</div>
     <div class="header_inner">
-      <div class="icon-menu toggle_menu"></div>
       <nav class="top-menu">
         <ul id="menu" class="list">
           <li data-menuanchor="home" class="home active"><a href="#home">Invisibles</a></li>
@@ -56,6 +59,23 @@
         </ul>
       </nav>
       <a class="btn preorder_now" href="#product">Preorder now</a>
+      <div class="social-buttons mobile_soc">
+        <div class="share_txt">SHARE WITH FRIENDS</div>
+        <ul class="list">
+          <li>
+            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
+          </li>
+          <li>
+            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
+          </li>
+          <li>
+            <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
+          </li>
+          <li>
+            <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=http://invisibles.eleks.com">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
@@ -84,7 +104,7 @@
     </div>
     <div class="container step_2">
       <div class="fp-section fp-table">
-        <h2>The best technology is the one you don’t notice.</h2>
+        <h2 class="thin">The best technology is the one you don’t notice.</h2>
         <div class="desc">Although wearable devices are serving us well, they keep moving forward. The revolutionary technology, Invisibles, enables a whole new world of possibilities. As a result, no more worries about materials, color, design, limited battery life and the other inconveniences of wearables.</div>
       </div>
     </div>
@@ -164,24 +184,41 @@
     </div>
   </div>
 </div>
-<div class="share">
-  <div class="social-buttons">
-    <ul class="list">
-      <li>
-        <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
-      </li>
-      <li>
-        <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
-      </li>
-      <li>
-        <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
-      </li>
-      <li>
-        <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=http://invisibles.eleks.com">LinkedIn</a>
-      </li>
-    </ul>
+<div id="share_btn">share</div>
+<a id="contact_us" href="mailto:invisibles@eleks.com">Contact us</a>
+
+<!--Popup Share-->
+<div class="popup popup_share t_center">
+  <div class="icon-close close_popup_form"></div>
+    <div class="fp-section fp-table step_3">
+      <div class="social-buttons mobile_soc">
+        <div class="share_txt">
+          SHARE
+          <br/>
+          THE INVISIBLES
+        </div>
+        <ul class="list">
+          <li>
+            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
+          </li>
+          <li>
+            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
+          </li>
+          <li>
+            <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
+          </li>
+          <li>
+            <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=http://invisibles.eleks.com">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
+<!--End Popup Share-->
+
+
+
 
 <!--Popup Video-->
 <div class="popup popup_video">
@@ -195,44 +232,47 @@
   <div class="icon-close close_popup_form"></div>
   <!--Popup subscribe form Step 1-->
   <div class="fp-section fp-table step_1">
-    <h2 class="small_title">BECOME EARLY ADOPTER</h2>
-    <div class="desc">You get an augmented experience that never distracts you from the real world. Invisibles are seamlessly integrated into your life to help you focus on your goals.</div>
-    <form action="#" class="subscribe_form">
-      <input id="mail_input" type="email" value="" placeholder="Enter your email">
-      <div>
-        <input type="button" value="NOTIFY ME" id="notify_me" class="btn"/>
-      </div>
-    </form>
+    <h2 class="small_title">SERIOUSLY?</h2>
+    <div id="yep_preorder" class="btn">YEP!</div>
+    <div id="nope_preorder" class="btn">NOPE</div>
   </div>
 
   <!--Popup subscribe form Step 2-->
   <div class="fp-section fp-table step_2">
-    <h2 class="small_title">Actually, we don't do INVISIBLES</h2>
+    <img src="images/popup_form.jpg" alt="popup form"/>
   </div>
 
   <!--Popup subscribe form Step 3-->
   <div class="fp-section fp-table step_3">
-    <h1 class="big_title">BUT WE CAN MAKE TECHNOLOGY <span>INVISIBLE</span></h1>
+    <h2 class="small_title">Actually, we don't do INVISIBLES</h2>
+  </div>
+
+  <!--Popup subscribe form Step 4-->
+  <div class="fp-section fp-table step_4">
+    <h1 class="big_title">BUT WE CAN MAKE
+      <br/>
+      TECHNOLOGY <span>INVISIBLE</span></h1>
+    <h2 class="thin">We create digital experience for modern digital world companies</h2>
     <a id="eleks_link" class="btn" href="http://eleks.com">FIND OUT MORE ABOUT ELEKS</a>
-    <div class="verification_form">
-      <div class="desc">We didn’t use your email, yet :) Whant to subscribe to our newsletter?</div>
-      <!-- Begin MailChimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form action="//eleks.us10.list-manage.com/subscribe/post?u=bd222c4c8bb96d99bc7f90a33&amp;id=7f28cacfa4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-            <input type="email" value="" name="EMAIL" class="email sendet_input" id="mce-EMAIL" placeholder="Enter your email" required>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;">
-              <input type="text" name="b_bd222c4c8bb96d99bc7f90a33_7f28cacfa4" tabindex="-1" value="">
-            </div>
-            <div class="clear">
-              <input type="submit" value="Yes" name="subscribe" id="mc-embedded-subscribe" class="button">
-              <div class="no_notify">No</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!--End mc_embed_signup-->
+    <div class="social-buttons">
+      <div class="share_txt">OR SHARE INVISIBLES</div>
+      <ul class="list">
+        <li>
+          <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
+        </li>
+        <li>
+          <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
+        </li>
+        <li>
+          <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
+        </li>
+        <li>
+          <a target="_blank" class="icon-linkedin" href="http://www.linkedin.com/shareArticle?url=http://invisibles.eleks.com">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+    <div class="any_questions">
+      for any questions please contact <a href="mailto:invisibles@eleks.com">invisibles@eleks.com</a>
     </div>
   </div>
 
@@ -248,55 +288,106 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    /*show/hide menu*/
-    $('.toggle_menu').click(function () {
-      $(".top-menu").slideToggle();
-      $(this).toggleClass('open');
-    });
-    $('.close_popup_video').click(function () {
-      $(".popup_video").fadeOut();
-    });
-
-    /*show/hide video*/
-    $('.play_video').click(function () {
-      $(".popup_video").fadeIn();
-    });
-    $('.close_popup_video').click(function () {
-      $(".popup_video").fadeOut();
-    });
-
-    /*show/hide form*/
-    var $mail_input = $('#mail_input'),
+    var scrollAllow = true,
+        $header_inner = $('.header_inner'),
+        $toggle_menu = $('.toggle_menu'),
+        $play_video = $('.play_video'),
+        $popup_video = $(".popup_video"),
+        $close_popup = $(".popup .icon-close"),
+        $btn_preorder_now  = $('.preorder_now'),
+        $preorder_now_link = $('.preorder_now_link'),
+        $step_1 = $('.popup_form .step_1'),
+        $step_2 = $('.popup_form .step_2'),
+        $step_3 = $('.popup_form .step_3'),
+        $step_4 = $('.popup_form .step_4'),
         $close_popup_form = $('.popup_form .close_popup_form');
-    $('.preorder_now_link').click(function () {
+
+      /*show/hide menu*/
+    $toggle_menu.click(function () {
+      scrollAllow = !scrollAllow;
+      $header_inner.slideToggle(200);
+      $(this).toggleClass('open');
+      $.fn.fullpage.setAllowScrolling(scrollAllow);
+    });
+    $('#home_link, .open + div + div .top-menu ul li a, .open + div + div .preorder_now').click(function () {
+      scrollAllow = true;
+      $header_inner.fadeOut(200);
+      $toggle_menu.removeClass('open');
+      $.fn.fullpage.setAllowScrolling(scrollAllow);
+    });
+
+    /*show share popup*/
+    $('#share_btn').click(function () {
+      $('.popup_share').fadeIn();
+    });
+
+    /*show video*/
+    $play_video.click(function () {
+      $popup_video.fadeIn();
+    });
+
+    /*pusle preorder now link */
+    $btn_preorder_now.mousedown(function(){
+      $preorder_now_link.addClass('pulse');
+    });
+    $btn_preorder_now.mouseup(function(){
+      $preorder_now_link.removeClass('pulse');
+    });
+
+    /*close popup*/
+    $close_popup.click(function () {
+      $(".popup").fadeOut();
+    });
+
+    /*Preorder Popups*/
+    $preorder_now_link.click(function () {
       $(".popup_form").fadeIn();
       setTimeout( function() {
-        $mail_input.focus();
       }, 1000);
     });
-    $('.close_popup_video').click(function () {
-      $(".popup_video").fadeOut();
-    });
-
-    $close_popup_form.click(function () {
+    $('#nope_preorder').click(function () {
       $(".popup_form").fadeOut();
     });
-
-
-
+    $('#yep_preorder').click(function () {
+      setTimeout(function () {
+        $step_1.fadeOut(500);
+        $close_popup_form.fadeOut(500);
+        $step_2.fadeIn(200);
+      }, 200);
+      setTimeout(function () {
+        $step_2.fadeOut(200);
+        $step_3.fadeIn(500);
+      }, 1000);
+      setTimeout(function () {
+        $step_3.fadeOut(500);
+        $step_4.fadeIn(500);
+        $step_4.addClass('show_step_4');
+      }, 3000);
+    });
 
     $('#fullpage').fullpage({
       anchors: ['home', 'about', '', '', 'features', 'product'],
       menu: '#menu',
+      paddingTop: '90px',
       responsive: 300
     });
 
+    /*move Section Down*/
     $('.icon-down').click(function () {
       $.fn.fullpage.moveSectionDown();
     });
 
+    /*move to Home Section*/
+    $('#home_link').click(function () {
+      $.fn.fullpage.moveTo('home');
+    });
+
+
+    /*slick Sliders*/
+    /*features slider*/
     $('.single-item').slick();
 
+    /*product slider*/
     $('.product-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -318,85 +409,7 @@
     window.onload = function() {
       document.querySelector('#cloud_video').play();
       $('body').addClass('loaded');
-  };
-
-    /*Email validation*/
-    $(function() {
-
-      var $vd_send  = $('#notify_me'),
-          $error_msg = $('<div>', {class: 'error_message'}),
-          $step_1 = $('.popup_form .fp-section.step_1'),
-          $step_2 = $('.popup_form .fp-section.step_2'),
-          $step_3 = $('.popup_form .fp-section.step_3');
-
-      $error_msg.html('wrong email format');
-
-      function validateEmail(email) {
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-      }
-
-      function verification() {
-        var email = $mail_input.val();
-
-        if (email == '' || !validateEmail(email)) {
-          $mail_input.each(function () {
-            if (!$(this).val()) {
-              $(this).addClass('error');
-            }
-          });
-          if (!validateEmail(email)) {
-            $mail_input.addClass('error');
-            $mail_input.parent().append($error_msg);
-          }
-          return false;
-        }
-
-        $('#mce-EMAIL').val(email);
-        setTimeout(function () {
-          $step_1.fadeOut(500);
-          $close_popup_form.fadeOut(500);
-          $step_2.fadeIn(1000);
-        }, 500);
-
-        setTimeout(function () {
-          $step_2.fadeOut(1000);
-          $step_3.fadeIn(1000);
-        }, 3000);
-
-        setTimeout(function () {
-          $step_3.addClass('show_verification_form');
-        }, 4500);
-
-        /*Count enter email for subscribe form*/
-        ga('send', 'event', 'button', 'click', 'enter_email');
-      };
-
-
-
-      $vd_send.on('click', function(e){
-        e.preventDefault();
-        verification();
-      });
-
-      $mail_input.on('focus keypress', function() {
-        $(this).removeClass('error');
-        $error_msg.remove();
-      });
-
-      $mail_input.on('keypress', function(e){
-        if ( e.which == 13 ) {
-          e.preventDefault();
-          verification();
-        }
-
-      });
-
-      $('#mc-embedded-subscribe, .no_notify').click(function () {
-        $step_3.removeClass('show_verification_form')
-      });
-
-    });
+    };
   });
 </script>
 

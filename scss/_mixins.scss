@@ -4,6 +4,12 @@
   -o-transition: $paremeters;
   transition: $paremeters;
 }
+@mixin transition5($paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5) {
+  -webkit-transition: $paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5;
+  -moz-transition: $paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5;
+  -o-transition: $paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5;
+  transition: $paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5;
+}
 @mixin transition-delay($paremeters) {
   -webkit-transition-delay: $paremeters;
   -moz-transition-delay: $paremeters;
