@@ -2,9 +2,9 @@
 body {
   background-color: #fff;
   color: #000;
-  font-family: 'ProximaNovaRegular';
-  font-size: 18px !important;
-  line-height: 28px;
+  font-family: "ProximaNovaLight";
+  font-size: 20px !important;
+  line-height: 30px;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased!important;
@@ -112,7 +112,7 @@ header {
 }
 .top-menu {
   display: inline-block;
-  margin-left: 15%;
+  margin-left: 16.5%;
   margin-top: 7px;
   li {
     display: inline-block;
@@ -120,7 +120,7 @@ header {
     a {
       color: #000;
       display: block;
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: 6px;
       text-transform: uppercase;
     }
@@ -264,10 +264,10 @@ a:focus {
 }
 h1.big_title {
   font-family: 'ProximaNovaLight';
-  font-size: 48px;
+  font-size: 60px;
   font-weight: normal;
   letter-spacing: 15px;
-  line-height: 70px;
+  line-height: 84px;
   margin: 0 0 20px;
   text-transform: uppercase;
 }
@@ -291,7 +291,7 @@ h2.small_title {
   color: #585858;
   font-family: 'ProximaNovaLight';
   margin: auto;
-  width: 30%;
+  width: 40%;
 }
 
 /*popup general style*/
@@ -504,7 +504,7 @@ h2.small_title {
       color: #000;
       cursor: default;
       font-family: 'ProximaNovaLight';
-      font-size: 48px;
+      font-size: 58px;
       letter-spacing: 15px;
     }
   }
@@ -615,7 +615,7 @@ h2.small_title {
     color: #c3c3c3;
     font-family: 'ProximaNovaLight';
     font-size: 19px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     line-height: 20px;
     margin-bottom: 50px;
     opacity: 0;
@@ -694,7 +694,7 @@ h2.small_title {
     .video_wrap,
     .desc {
       opacity: 1;
-      letter-spacing: 6px;
+      letter-spacing: 8px;
     }
     .big_title {
       opacity: 1;
@@ -724,10 +724,14 @@ h2.small_title {
 
   }
   h2 {
+    color: #565656;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 32px;
     opacity: 0;
   }
   .desc {
-    color: #fff;
+    color: #ddd;
     opacity: 0;
     @include translateY(10px);
   }
@@ -782,8 +786,8 @@ h2.small_title {
   .mask {
     color: #ebebeb;
     font-family: 'ProximaNovaLight';
-    font-size: 72px;
-    letter-spacing: 10px;
+    font-size: 102px;
+    letter-spacing: 20px;
     line-height: 80px;
     margin-top: -20px;
     opacity: 0;
@@ -792,6 +796,7 @@ h2.small_title {
     @include transition(1s .2s ease-out);
   }
   .desc {
+    margin-top: 12px;
     opacity: 0;
     position: relative;
     @include transition(0.5s 0.5s);
@@ -806,7 +811,7 @@ h2.small_title {
   .slick-slide {
     &.slick-active {
       .mask {
-        letter-spacing: 20px;
+        letter-spacing: 26px;
         @include animation(opacity_masc 1.5s forwards ease-out);
       }
       .desc {
@@ -1387,27 +1392,63 @@ h2.small_title {
 /*Responsive*/
 @media (max-width: 1600px) {
   .top-menu {
-    margin-left: 20%;
+    margin-left: 21%;
   }
 }
 
 @media (max-width: 1366px) {
   .top-menu {
-    margin-left: 23%;
+    margin-left: 25%;
   }
 }
 
 @media (max-width: 1280px) {
+  body {
+    font-size: 18px !important;
+    line-height: 28px;
+  }
+  h1.big_title {
+    font-size: 48px;
+    line-height: 70px;
+  }
   .desc,
   .popup_form .step_1 .desc {
     width: 50%;
   }
   .top-menu {
-    margin-left: 26%;
+    margin-left: 27%;
+    li {
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+  .slick-slide.slick-center h3 {
+    font-size: 48px;
+  }
+  #section_about {
+    h2 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+  #section_features {
+    .mask {
+      font-size: 72px;
+      letter-spacing: 10px;
+      line-height: 80px;
+    }
+    .slick-slide {
+      &.slick-active {
+        .mask {
+          letter-spacing: 20px;
+        }
+      }
+    }
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .container {
     padding: 0 60px;
   }
@@ -1420,6 +1461,9 @@ h2.small_title {
   .icon-close {
     right: 35px;
   }
+}
+
+@media (max-width: 1024px) {
 }
 
 @media (max-width: 980px) {
