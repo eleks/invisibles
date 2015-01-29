@@ -408,9 +408,6 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
 .popup.active { display: block; }
 .popup .fp-section { padding-top: 0 !important; }
 
-.popup_video { display: block; z-index: -1; }
-.popup_video.active { z-index: 999; }
-
 .icon-close { cursor: pointer; position: absolute; right: 60px; top: 35px; z-index: 1; }
 .icon-close:after { display: block; font-size: 40px; line-height: 40px; content: "\e601"; -webkit-transition: 0.25s; -moz-transition: 0.25s; -o-transition: 0.25s; transition: 0.25s; }
 .icon-close:hover:after { color: #2b52fc; -webkit-transform: scale(1.3); -moz-transform: scale(1.3); -ms-transform: scale(1.3); -o-transform: scale(1.3); transform: scale(1.3); }

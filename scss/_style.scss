@@ -311,13 +311,6 @@ h2.small_title {
     padding-top: 0 !important;
   }
 }
-.popup_video {
-  display: block;
-  z-index: -1;
-  &.active {
-    z-index: 999;
-  }
-}
 .icon-close {
   cursor: pointer;
   position: absolute;
