@@ -305,12 +305,16 @@
 
 <script type="text/javascript">
 
+var isMobileDevice = false;
+
 if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browserType.isWindowsPhone()) {
+  isMobileDevice = true;
   $('<img/>', {
     src: 'images/mobile_invisibles.gif',
     alt: 'invisibles'
   }).appendTo($('.text_masc'));
 } else {
+  isMobileDevice = false;
   $('<video/>', {
     id: 'cloud_video',
     loop: 'loop',
@@ -515,8 +519,8 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
   
 	player123 = new YT.Player('video', {
           videoId: 'Q1sfkm6WogQ',
-		  height: '390',
-          width: '640',
+		  height: '480',
+          width: '853',
           events: {
             'onReady': onPlayerReady
           }
@@ -530,14 +534,17 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
 	
 	player123.playVideo();
 	
-	$(".popup_video").hide();
-      
-	setTimeout(function () {
-		player123.stopVideo();
-		$(".popup_video").fadeIn();
-    	player123.playVideo();
-      }, 600);
-  });
+	if (isMobileDevice) {
+		// black magic. don't do this at home. by MM
+		$(".popup_video").hide();	    
+		setTimeout(function () {
+				player123.stopVideo();
+				$(".popup_video").fadeIn();
+				player123.playVideo();
+			}, 650);
+		}
+	});		
+	
 
     var pauseButton = document.getElementById("pause-button");
     pauseButton.addEventListener("click", function() {
