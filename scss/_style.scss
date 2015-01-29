@@ -112,7 +112,7 @@ header {
 }
 .top-menu {
   display: inline-block;
-  margin-left: 10%;
+  margin-left: 15%;
   margin-top: 7px;
   li {
     display: inline-block;
@@ -527,11 +527,13 @@ h2.small_title {
   cursor: pointer;
   display: block;
   font-family: 'ProximaNovaRegular';
+  font-size: 26px;
   outline: medium none;
   overflow: hidden;
   padding: 0;
   position: absolute;
   top: 50%;
+  @include transition2(color 0.5s ease-out, transform 0.5s ease-out);
   &:hover,
   &:focus {
     outline: none;
@@ -539,11 +541,36 @@ h2.small_title {
 }
 .slick-prev {
   left: 0;
+  @include translateX(15px);
 }
 .slick-next {
   right: 0;
+  @include translateX(-15px);
 }
-
+.fp-section.active {
+  .slick-prev {
+    @include translateX(0);
+    &:hover {
+      color: #002ffb;
+      @include translateXImportant(-5px);
+    }
+    &:active {
+      color: #000;
+      @include scaleImportant(.9);
+    }
+  }
+  .slick-next {
+    @include translateX(0);
+    &:hover {
+      color: #002ffb;
+      @include translateXImportant(5px);
+    }
+    &:active {
+      color: #000;
+      @include scaleImportant(.9);
+    }
+  }
+}
 
 
 /*section home*/
@@ -555,7 +582,7 @@ h2.small_title {
     position: absolute;
     right: 0;
     top: 0;
-    @include transition(1s .65s);
+    @include transition(3s 1s ease-out);
     video {
       height: 100%;
       width: 100%;
@@ -579,7 +606,7 @@ h2.small_title {
     margin-top: 6%;
     position: relative;
     text-transform: uppercase;
-    @include transition(0.5s);
+    @include transition(1s ease-out);
   }
   .text_masc {
     height: 20%;
@@ -588,13 +615,17 @@ h2.small_title {
     color: #c3c3c3;
     font-family: 'ProximaNovaLight';
     font-size: 19px;
-    letter-spacing: 6px;
+    letter-spacing: 2px;
     line-height: 20px;
     margin-bottom: 50px;
     opacity: 0;
     position: relative;
     text-transform: uppercase;
-    @include transition(.5s .9s);
+    @include transition(1.2s 2s);
+  }
+  &.play_video_popup {
+    @include transition(.5s ease-out);
+    @include scale(1.1);
   }
 }
 .play_video {
@@ -604,11 +635,12 @@ h2.small_title {
   font-size: 28px;
   line-height: 30px;
   margin: 0 10px;
+  opacity: 0;
   padding: 40px;
   position: relative;
   text-align: left;
-  @include scale(0);
-  @include transition(.5s 1.2s);
+  @include scale(0.75);
+  @include transition(1s 2.7s);
   &:before {
     border-bottom: 7px solid transparent;
     border-left: 13px solid #fff;
@@ -642,7 +674,7 @@ h2.small_title {
     }
   }
 }
-.icon-down {
+.icon_down {
   bottom: 2%;
   color: #d4d4d4;
   cursor: pointer;
@@ -650,10 +682,11 @@ h2.small_title {
   opacity: 0;
   position: absolute;
   left: 50%;
-  @include transition(.5s cubic-bezier(0.87, -0.41, 0.19, 1.44) 2s);
-  @include translateY(-50px);
-  &:after {
-    content: "\e602";
+  @include transition2(margin .5s ease-out, color .5s ease-out);
+  @include translateY(-10px);
+  &:hover {
+    color: #222;
+    margin-bottom: -5px;
   }
 }
 .loaded {
@@ -661,16 +694,17 @@ h2.small_title {
     .video_wrap,
     .desc {
       opacity: 1;
+      letter-spacing: 6px;
     }
     .big_title {
       opacity: 1;
       letter-spacing: 25px;
     }
-    .icon-down {
-      opacity: 1;
-      @include translateY(0);
+    .icon_down {
+      @include animation(arrow_down .5s 3.5s forwards ease-out);
     }
     .play_video {
+      opacity: 1;
       @include scale(1);
     }
   }
@@ -681,11 +715,13 @@ h2.small_title {
   background-color: #000;
   h1.big_title {
     color: #fff;
-    opacity: 0;
-    span {
-      display: block;
+    div {
       opacity: 0;
+      &+ div {
+        opacity: 0;
+      }
     }
+
   }
   h2 {
     opacity: 0;
@@ -693,6 +729,7 @@ h2.small_title {
   .desc {
     color: #fff;
     opacity: 0;
+    @include translateY(10px);
   }
   .container {
     bottom: 0;
@@ -705,19 +742,29 @@ h2.small_title {
     .container {
       &.step_1 {
         .big_title {
-          @include animation(let_the_technology 2s 1s forwards ease-in-out);
-          span {
-            @include animation(disappear 2s 1s forwards ease-in-out);
+          div {
+            @include animation(let_the_technology 2.5s 1s forwards ease-out);
+            &+ div {
+              @include animation(disappear 3.5s 1s forwards ease-out);
+            }
           }
+
         }
       }
       &.step_2 {
         h2 {
-          @include animation(opacity 0.25s 2.75s forwards ease-in);
+          @include animation(opacity 1s 4s forwards ease-out);
         }
         .desc {
-          @include animation(opacity 0.25s 3.5s forwards ease-in);
+          @include animation(about_desc 1s 5s forwards ease-out);
         }
+      }
+    }
+    .icon_down {
+      color: #666;
+      @include animation(arrow_down .5s 6s forwards ease-out);
+      &:hover {
+        color: #fff;
       }
     }
   }
@@ -725,53 +772,77 @@ h2.small_title {
 
 /*section features*/
 #section_features {
+  padding-top: 0!important;
   .small_title {
     opacity: 0;
+    letter-spacing: 7px;
+    margin-top: -20px;
+    @include transition(1.3s .5s ease-out);
   }
   .mask {
     color: #ebebeb;
     font-family: 'ProximaNovaLight';
     font-size: 72px;
+    letter-spacing: 10px;
     line-height: 80px;
+    margin-top: -20px;
     opacity: 0;
     text-transform: uppercase;
     @include translateY(56px);
-    @include transition(0.5s 0.5s);
+    @include transition(1s .2s ease-out);
   }
   .desc {
+    opacity: 0;
     position: relative;
+    @include transition(0.5s 0.5s);
   }
   .slick-list {
     opacity: 0;
-  }
-  .slick-slide.slick-active {
-    .mask {
-      opacity: 1;
-    }
   }
   .slick-prev,
   .slick-next {
     opacity: 0;
   }
+  .slick-slide {
+    &.slick-active {
+      .mask {
+        letter-spacing: 20px;
+        @include animation(opacity_masc 1.5s forwards ease-out);
+      }
+      .desc {
+        @include animation(about_desc 1s .8s forwards ease-out);
+      }
+    }
+  }
   &.active {
     .small_title {
       opacity: 1;
-      @include transition(0.5s .5s ease-in);
+      letter-spacing: 10px;
     }
     .slick-list {
-      opacity: 1;
-      @include transition(0.5s 1s ease-in);
+      @include animation(opacity 1.5s 1s forwards ease-out);
     }
-    .slick-prev,
+    .slick-prev {
+      @include animation(show_prev_arrow 0.5s 2s forwards ease-out);
+    }
     .slick-next {
-      opacity: 1;
-      @include transition(0.5s 1.5s ease-in);
+      @include animation(show_next_arrow 0.5s 2s forwards ease-out);
+    }
+    .icon_down {
+      @include animation(arrow_down .5s 3s forwards ease-out);
     }
   }
 }
 
 /*section product*/
 #section_product {
+  .container {
+    .small_title {
+      opacity: 0;
+      letter-spacing: 7px;
+      @include transition(1.3s .7s ease-out);
+    }
+  }
   .price {
     color: #ccc;
     font-size: 16px;
@@ -782,12 +853,15 @@ h2.small_title {
     opacity: 0;
     @include blur(2px);
   }
-  .slick-slide,
+  .slick-list,
   .slick-prev,
   .slick-next {
     opacity: 0;
   }
   &.active {
+    .slick-list {
+      @include animation(opacity 1s 1.2s forwards ease-out);
+    }
     .slick-slide {
       @include animation(opacity 0.25s 1.5s forwards ease-in);
     }
@@ -797,9 +871,11 @@ h2.small_title {
     .slick-center {
       @include animation(opacity 0.25s .5s forwards ease-in);
     }
-    .slick-prev,
+    .slick-prev {
+      @include animation(show_prev_arrow 0.5s 1.5s forwards ease-out);
+    }
     .slick-next {
-      @include animation(opacity 0.25s 1.5s forwards ease-in);
+      @include animation(show_next_arrow 0.5s 1.5s forwards ease-out);
     }
   }
 }
@@ -834,8 +910,14 @@ h2.small_title {
   }
 }
 #section_product.active {
+  .container {
+    .small_title {
+      opacity: 1;
+      letter-spacing: 10px;
+    }
+  }
   .preorder_now_link {
-    @include animation(translateY 0.5s 1.5s forwards ease-in);
+    @include animation(translateY 0.5s 1.3s forwards ease-in);
     &:hover {
       h2.small_title {
         letter-spacing: 10px;
@@ -922,6 +1004,7 @@ h2.small_title {
     }
     &:hover {
       a {
+        @include scale(1.2);
         &.icon-facebook {
           border-color: #3566cc;
           color: #3566cc;
@@ -965,6 +1048,10 @@ h2.small_title {
     height: 30%;
     li {
       a {
+        font-size: 18px;
+        line-height: 14px;
+        padding-top: 48px;
+        width: 50px;
         &.icon-facebook {
           border-color: #3566cc;
           color: #3566cc;
@@ -982,7 +1069,7 @@ h2.small_title {
           color: #1487bf;
         }
       }
-      &:active {
+      &:hover {
         a {
           color: #fff;
           &.icon-facebook {
@@ -1021,13 +1108,17 @@ h2.small_title {
   left: -63px;
   letter-spacing: 7px;
   line-height: 15px;
+  margin-top: -30px;
   opacity: 0;
-  padding: 10px 15px;
+  padding: 30px;
   position: fixed;
   text-transform: uppercase;
   top: 50%;
-  @include transition(none);
+  @include transition(background-color .5s ease-out);
   @include rotate(90deg);
+  &:hover {
+    color: #002ffb;
+  }
 }
 
 /*share btn*/
@@ -1036,13 +1127,18 @@ h2.small_title {
   font-size: 10px;
   letter-spacing: 7px;
   line-height: 15px;
+  margin-top: -30px;
   opacity: 0;
-  padding: 10px 15px;
+  padding: 30px;
   position: fixed;
   text-transform: uppercase;
   top: 50%;
   right: -30px;
   @include rotate(-90deg);
+  @include transition(background-color .5s ease-out);
+  &:hover {
+    color: #002ffb;
+  }
 }
 .fp-viewing-about {
   #contact_us,
@@ -1060,6 +1156,10 @@ h2.small_title {
 
 /*Popup share*/
 .popup_share {
+  .fp-section {
+    opacity: 0;
+    @include transition(.5s ease-out 0.2s);
+  }
   .social-buttons.mobile_soc {
     display: block;
     .share_txt {
@@ -1070,11 +1170,15 @@ h2.small_title {
       margin: 10px 0;
     }
   }
+  &.active {
+    .fp-section {
+      opacity: 1;
+    }
+  }
 }
 
 /*Popup video*/
 .popup_video {
-  background-color: #000;
   .close {
     top: 85px;
     &:after {
@@ -1082,14 +1186,27 @@ h2.small_title {
     }
   }
   iframe {
-    height: 100%;
-    width: 100%;
+    opacity: 0;
+   /* height: 100%;
+    width: 100%;*/
+  }
+  &.active {
+    iframe {
+      @include transition(.5s ease-out .7s);
+      opacity: 1;
+    }
   }
 }
 
 /*popup_form*/
 .popup_form {
+  .fp-section {
+    background-color: #fff;
+    opacity: 0;
+    position: absolute;
+  }
   .step_1 {
+    z-index: 4;
     h2.small_title {
       margin-bottom: 30px;
     }
@@ -1099,29 +1216,48 @@ h2.small_title {
       &#nope_preorder {
         border-color: #ccc;
         &:hover {
-          border-color: #002ffb;
+          background-color: #ccc;
+          border-color: #ccc;
         }
       }
     }
   }
+  .step_2 {
+    z-index: 3;
+    img {
+      opacity: 0;
+    }
+  }
+  .step_3 {
+    z-index: 2;
+    h2.small_title {
+      line-height: 40px;
+      div {
+        opacity: 0;
+        @include transition(.5s ease-out .2s);
+      }
+    }
+  }
   .step_4 {
+    opacity: 0!important;
+    z-index: 1;
     background-color: #000;
     .big_title {
       color: #fff;
-      opacity: 0;
-      @include transition(0.5s 1s);
-      span {
-        @include transition(0.5s 2s);
+      letter-spacing: 0;
+      margin-bottom: 30px;
+      >span {
+        display: block;
+        opacity: 0;
+        letter-spacing: 10px;
+        @include animation(none);
       }
-    }
-    h2 {
-      opacity: 0;
     }
     .btn {
       border-color: #001c97;
       color: #fff;
       opacity: 0;
-      min-width: 410px;
+      min-width: 260px;
     }
     .social-buttons {
       opacity: 0;
@@ -1133,37 +1269,85 @@ h2.small_title {
     }
     .any_questions {
       bottom: 2%;
-      color: #7e7e7e;
+      color: #5a5a5a;
       font-size: 14px;
       left: 0;
       opacity: 0;
       position: absolute;
       right: 0;
       a {
-        color: #7e7e7e;
+        color: #5a5a5a;
+        text-decoration: underline;
+        &:hover {
+          color: #fff;
+        }
       }
+    }
+    .icon_down {
+      bottom: auto;
+      color: #666;
+      top: 2%;
+      @include translateY(10px);
+    }
+  }
+  &.active {
+    .fp-section {
+      opacity: 1;
     }
   }
 }
 
-.step_4.show_step_4 {
-  .big_title {
+.step_2.show_step_2 {
+  img {
     opacity: 1;
-    span {
-      @include blur(5px);
+    @include transition(filter 2.5s ease-out .7s);
+    @include blur(6px);
+  }
+}
+.step_3.show_step_3 {
+  h2.small_title {
+    div {
+      opacity: 1;
+      @include transition(1s ease-out);
+      & + div {
+        opacity: 1;
+        @include transition(.2s ease-out 1.8s);
+      }
     }
   }
-  h2 {
-    @include animation(opacity 0.5s 2s forwards ease-in);
+}
+.step_4.show_step_4 {
+  opacity: 1 !important;
+  @include transition(1s ease-out);
+  .big_title {
+    >span {
+      @include animation(opacity_spasing 2s 1s forwards ease-out);
+      & + span {
+        display: inline-block;
+        @include animation(opacity_spasing 2s 1.9s forwards ease-out);
+        span {
+          display: inline-block;
+          @include transition(filter 2s ease-out 3s);
+          @include blur(5px);
+        }
+      }
+    }
   }
   .btn {
-    @include animation(opacity 0.5s 3s forwards ease-in);
+    @include animation(opacity 0.5s 4s forwards ease-out);
   }
   .social-buttons {
-    @include animation(opacity 0.25s 4s forwards ease-in);
+    @include animation(opacity 0.5s 5s forwards ease-out);
   }
   .any_questions {
-    @include animation(opacity 0.25s 5s forwards ease-in);
+    @include animation(about_desc 1s 6.5s forwards ease-out);
+  }
+  .icon_down {
+    @include animation(about_desc .5s 6.5s forwards ease-out);
+    &:hover {
+      color: #fff;
+      margin: -5px 0 0 0;
+    }
   }
 }
 
@@ -1201,10 +1385,25 @@ h2.small_title {
 }
 
 /*Responsive*/
+@media (max-width: 1600px) {
+  .top-menu {
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .top-menu {
+    margin-left: 23%;
+  }
+}
+
 @media (max-width: 1280px) {
   .desc,
   .popup_form .step_1 .desc {
     width: 50%;
+  }
+  .top-menu {
+    margin-left: 26%;
   }
 }
 
@@ -1212,8 +1411,8 @@ h2.small_title {
   .container {
     padding: 0 60px;
   }
-  .share {
-    width: 50px;
+  .top-menu {
+    margin-left: 28%;
   }
   .verification_form .desc {
     width: 100%;
@@ -1223,14 +1422,20 @@ h2.small_title {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   header {
     .container {
       padding: 0;
     }
   }
+}
+
+@media (max-width: 860px) {
   .top-menu {
-    margin-left: 15%;
+    margin-left: 22%;
+    li {
+      margin: 0 15px;
+    }
   }
   .slick-slide {
     .tips {
@@ -1293,6 +1498,10 @@ h2.small_title {
     .header_inner {
       background-color: #000;
     }
+  }
+  #contact_us,
+  #share_btn {
+    display: none;
   }
 }
 

@@ -55,10 +55,10 @@
           <li data-menuanchor="home" class="home active"><a href="#home">Invisibles</a></li>
           <li data-menuanchor="about"><a href="#about">About</a></li>
           <li data-menuanchor="features"><a href="#features">Features</a></li>
-          <li data-menuanchor="product"><a href="#product">Product</a></li>
+          <li data-menuanchor="products"><a href="#products">Products</a></li>
         </ul>
       </nav>
-      <a class="btn preorder_now" href="#product">Preorder now</a>
+      <a class="btn preorder_now" href="#products">Preorder now</a>
       <div class="social-buttons mobile_soc">
         <div class="share_txt">SHARE WITH FRIENDS</div>
         <ul class="list">
@@ -92,14 +92,19 @@
     <div class="masc"></div>
     <h1 class="big_title">Meet the</h1>
     <div class="text_masc"></div>
-    <div class="desc">Future of Wearable Technology</div>
-    <div class="play_video"></div>
-    <div class="icon-down"></div>
+    <div class="desc">The Future of Wearable Technology</div>
+    <div id="play-button" class="play_video"></div>
+    <div class="icon_down">&#8595;</div>
   </div>
   <div class="section" id="section_about">
     <div class="container step_1">
       <div class="fp-section fp-table step_1">
-        <h1 class="big_title">Let The Technology <span>Disappear</span></h1>
+        <h1 class="big_title">
+          <div>
+            Let Technology
+          </div>
+          <div>Disappear</div>
+        </h1>
       </div>
     </div>
     <div class="container step_2">
@@ -108,7 +113,7 @@
         <div class="desc">Although wearable devices are serving us well, they keep moving forward. The revolutionary technology, Invisibles, enables a whole new world of possibilities. As a result, no more worries about materials, color, design, limited battery life and the other inconveniences of wearables.</div>
       </div>
     </div>
-    <div class="icon-down"></div>
+    <div class="icon_down">&#8595;</div>
   </div>
   <div class="section" id="section_features">
     <div class="container">
@@ -140,18 +145,18 @@
         </div>
       </div>
     </div>
-    <div class="icon-down"></div>
+    <div class="icon_down">&#8595;</div>
   </div>
   <div class="section" id="section_product">
     <div class="container">
+      <h2 class="small_title">Our Products</h2>
       <div class="intro">
         <div class="slider product-slider">
-          <div><img src="images/slide_img.png" alt="slide 1"/></div>
-          <div><img src="images/slide_img.png" alt="slide 2"/></div>
-          <div><img src="images/slide_img.png" alt="slide 3"/></div>
-          <div><img src="images/slide_img.png" alt="slide 4"/></div>
-          <div><img src="images/slide_img.png" alt="slide 5"/></div>
-          <div><img src="images/slide_img.png" alt="slide 6"/></div>
+          <div><img src="images/invisible_watch.png" alt="slide 1"/></div>
+          <div><img src="images/invisible_shoes.png" alt="slide 2"/></div>
+          <div><img src="images/invisible_glasses.png" alt="slide 3"/></div>
+          <div><img src="images/invisible_ring.png" alt="slide 4"/></div>
+          <div><img src="images/invisible_tracker.png" alt="slide 5"/></div>
         </div>
         <div class="slider product-slider-nav">
           <div>
@@ -180,7 +185,7 @@
     </div>
     <div class="preorder_now_link">
       <h2 class="small_title">PREORDER NOW</h2>
-      <div class="desc">The shipments start early 2015 and you’re welcome to preorder Invisibles right now!</div>
+      <div class="desc">The shipments start early 2015</div>
     </div>
   </div>
 </div>
@@ -221,9 +226,11 @@
 
 
 <!--Popup Video-->
-<div class="popup popup_video">
-  <div class="icon-close close_popup_video"></div>
-  <iframe width="560" height="315" src="//www.youtube.com/embed/e3-pkKYmt9w" frameborder="0" allowfullscreen></iframe>
+<div class="popup popup_video t_center">
+  <div id="pause-button" class="icon-close close_popup_video"></div>
+  <div class="fp-section fp-table step_1">
+    <iframe id="video" width="853" height="480" src="https://www.youtube.com/embed/Q1sfkm6WogQ?showinfo=0&enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
 <!--End Popup Video-->
 
@@ -244,16 +251,22 @@
 
   <!--Popup subscribe form Step 3-->
   <div class="fp-section fp-table step_3">
-    <h2 class="small_title">Actually, we don't do INVISIBLES</h2>
+    <h2 class="small_title">
+      <div>Actually</div>
+      <div>we don't do INVISIBLES</div>
+    </h2>
   </div>
 
   <!--Popup subscribe form Step 4-->
   <div class="fp-section fp-table step_4">
-    <h1 class="big_title">BUT WE CAN MAKE
-      <br/>
-      TECHNOLOGY <span>INVISIBLE</span></h1>
-    <h2 class="thin">We create digital experience for modern digital world companies</h2>
-    <a id="eleks_link" class="btn" href="http://eleks.com">FIND OUT MORE ABOUT ELEKS</a>
+    <div class="icon_down">&#8593;</div>
+    <h1 class="big_title">
+      <span>BUT WE CAN do MAKE</span>
+      <span>TECHNOLOGY
+        <span>INVISIBLE</span>
+      </span>
+    </h1>
+    <a target="_blank" id="eleks_link" class="btn" href="http://eleks.com/digital">FIND OUT how</a>
     <div class="social-buttons">
       <div class="share_txt">OR SHARE INVISIBLES</div>
       <ul class="list">
@@ -272,7 +285,7 @@
       </ul>
     </div>
     <div class="any_questions">
-      for any questions please contact <a href="mailto:invisibles@eleks.com">invisibles@eleks.com</a>
+      for any questions, please contact <a href="mailto:invisibles@eleks.com">invisibles@eleks.com</a>
     </div>
   </div>
 
@@ -292,10 +305,14 @@
         $header_inner = $('.header_inner'),
         $toggle_menu = $('.toggle_menu'),
         $play_video = $('.play_video'),
+        $popup = $(".popup"),
         $popup_video = $(".popup_video"),
+        $popup_share = $('.popup_share'),
+        $popup_form = $(".popup_form"),
         $close_popup = $(".popup .icon-close"),
         $btn_preorder_now  = $('.preorder_now'),
         $preorder_now_link = $('.preorder_now_link'),
+        $section_home = $('#section_home'),
         $step_1 = $('.popup_form .step_1'),
         $step_2 = $('.popup_form .step_2'),
         $step_3 = $('.popup_form .step_3'),
@@ -318,12 +335,15 @@
 
     /*show share popup*/
     $('#share_btn').click(function () {
-      $('.popup_share').fadeIn();
+      $popup_share.fadeIn(200);
+      $popup_share.addClass('active');
     });
 
     /*show video*/
-    $play_video.click(function () {
+      $play_video.click(function () {
       $popup_video.fadeIn();
+      $popup_video.addClass('active');
+      $section_home.addClass('play_video_popup');
     });
 
     /*pusle preorder now link */
@@ -336,50 +356,80 @@
 
     /*close popup*/
     $close_popup.click(function () {
-      $(".popup").fadeOut();
+      $popup.fadeOut(300);
+      $popup.removeClass('active');
+      $section_home.removeClass('play_video_popup');
     });
 
     /*Preorder Popups*/
     $preorder_now_link.click(function () {
-      $(".popup_form").fadeIn();
+      $popup_form.fadeIn(200);
+      $popup_form.addClass('active');
       setTimeout( function() {
       }, 1000);
     });
     $('#nope_preorder').click(function () {
-      $(".popup_form").fadeOut();
+      $popup_form.fadeOut();
     });
     $('#yep_preorder').click(function () {
+      $step_1.fadeOut(500);
+      $close_popup_form.fadeOut(500);
+
       setTimeout(function () {
-        $step_1.fadeOut(500);
-        $close_popup_form.fadeOut(500);
         $step_2.fadeIn(200);
-      }, 200);
+        $step_2.addClass('show_step_2');
+      }, 500);
       setTimeout(function () {
-        $step_2.fadeOut(200);
+        $step_2.fadeOut(500);
+      }, 2000);
+      setTimeout(function () {
+        $step_2.removeClass('show_step_2');
+      }, 2500);
+      setTimeout(function () {
         $step_3.fadeIn(500);
-      }, 1000);
+        $step_3.addClass('show_step_3');
+      }, 1300);
       setTimeout(function () {
         $step_3.fadeOut(500);
-        $step_4.fadeIn(500);
         $step_4.addClass('show_step_4');
-      }, 3000);
+        $step_3.removeClass('show_step_3');
+        $step_4.fadeIn(500);
+      }, 4500);
     });
 
     $('#fullpage').fullpage({
-      anchors: ['home', 'about', '', '', 'features', 'product'],
+      anchors: ['home', 'about', '', '', 'features', 'products'],
       menu: '#menu',
-      paddingTop: '90px',
-      responsive: 300
+      responsive: 300,
+      afterLoad: function(anchorLink, index){
+        //first slide of the second section
+        if(index == 1){
+          document.querySelector('#cloud_video').play();
+        } else {
+          document.querySelector('#cloud_video').pause();
+        }
+      }
     });
 
     /*move Section Down*/
-    $('.icon-down').click(function () {
+    $('.icon_down').click(function () {
       $.fn.fullpage.moveSectionDown();
     });
 
     /*move to Home Section*/
     $('#home_link').click(function () {
       $.fn.fullpage.moveTo('home');
+    });
+
+    /*Top arrow*/
+    $('.step_4 .icon_down').click(function () {
+      $.fn.fullpage.moveTo('home');
+      $step_4.fadeOut(500);
+      $step_4.removeClass('show_step_4');
+      setTimeout(function () {
+        $popup_form.fadeOut(500);
+        $step_1.fadeIn(5000);
+      }, 500);
     });
 
 
@@ -402,7 +452,15 @@
       dots: false,
       arrows: false,
       centerMode: true,
-      focusOnSelect: true
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
     });
 
     /*Play home page video*/
@@ -411,6 +469,41 @@
       $('body').addClass('loaded');
     };
   });
+
+
+
+  // Inject YouTube API script
+  var tag = document.createElement('script');
+  tag.src = "//www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubePlayerAPIReady() {
+    // create the global player from the specific iframe (#video)
+    player = new YT.Player('video', {
+      events: {
+        // call this function when player is ready to use
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+
+    // bind events
+    var playButton = document.getElementById("play-button");
+    playButton.addEventListener("click", function() {
+      player.playVideo();
+    });
+
+    var pauseButton = document.getElementById("pause-button");
+    pauseButton.addEventListener("click", function() {
+      /*player.pauseVideo();*/
+      player.stopVideo();
+    });
+
+  }
 </script>
 
 <!--Google Annalytics-->

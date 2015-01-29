@@ -4,6 +4,12 @@
   -o-transition: $paremeters;
   transition: $paremeters;
 }
+@mixin transition2($paremeter1, $paremeter2) {
+  -webkit-transition: $paremeter1, $paremeter2;
+  -moz-transition: $paremeter1, $paremeter2;
+  -o-transition: $paremeter1, $paremeter2;
+  transition: $paremeter1, $paremeter2;
+}
 @mixin transition5($paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5) {
   -webkit-transition: $paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5;
   -moz-transition: $paremeter1, $paremeter2, $paremeter3, $paremeter4, $paremeter5;
@@ -28,6 +34,13 @@
   -o-transform: scale($paremeters);
   transform: scale($paremeters);
 }
+@mixin scaleImportant($paremeters) {
+  -webkit-transform: scale($paremeters) !important;
+  -moz-transform: scale($paremeters) !important;
+  -ms-transform: scale($paremeters) !important;
+  -o-transform: scale($paremeters) !important;
+  transform: scale($paremeters) !important;
+}
 @mixin rotate($paremeters) {
   -webkit-transform: rotate($paremeters);
   -moz-transform: rotate($paremeters);
@@ -49,12 +62,26 @@
   -o-transform: translateX($paremeters);
   transform: translateX($paremeters);
 }
+@mixin translateXImportant($paremeters) {
+  -webkit-transform: translateX($paremeters) !important;
+  -moz-transform: translateX($paremeters) !important;
+  -ms-transform: translateX($paremeters) !important;
+  -o-transform: translateX($paremeters) !important;
+  transform: translateX($paremeters) !important;
+}
 @mixin translateY($paremeters) {
   -webkit-transform: translateY($paremeters);
   -moz-transform: translateY($paremeters);
   -ms-transform: translateY($paremeters);
   -o-transform: translateY($paremeters);
   transform: translateY($paremeters);
+}
+@mixin translateYImportant($paremeters) {
+  -webkit-transform: translateY($paremeters) !important;
+  -moz-transform: translateY($paremeters) !important;
+  -ms-transform: translateY($paremeters) !important;
+  -o-transform: translateY($paremeters) !important;
+  transform: translateY($paremeters) !important;
 }
 
 
