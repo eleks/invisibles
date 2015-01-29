@@ -228,7 +228,7 @@
 <div class="popup popup_video t_center">
   <div id="pause-button" class="icon-close close_popup_video"></div>
   <div class="fp-section fp-table step_1">
-    <iframe id="video" width="853" height="480" src="https://www.youtube.com/embed/Q1sfkm6WogQ?showinfo=0&enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>
+    <div id="video_wrap"></div>
   </div>
 </div>
 <!--End Popup Video-->
@@ -319,9 +319,14 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
     document.querySelector('#cloud_video').play();
   }, 1000);
 }
+/*<iframe id="video" width="853" height="480" src="http://www.youtube.com/embed/Q1sfkm6WogQ?showinfo=0&enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>*/
+
+
+
 
   $(document).ready(function() {
     var scrollAllow = true,
+        $video_iframe,
         $header_inner = $('.header_inner'),
         $toggle_menu = $('.toggle_menu'),
         $play_video = $('.play_video'),
@@ -363,7 +368,17 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
     });
 
     /*show video*/
-      $play_video.click(function () {
+    $play_video.click(function () {
+      $video_iframe = $('<iframe/>', {
+        id: 'video',
+        width: '853',
+        height: '480',
+        src: 'http://www.youtube.com/embed/Q1sfkm6WogQ?showinfo=0&autoplay=1',
+        loop: 'loop',
+        frameborder: '0',
+        allowfullscreen: '',
+        autoplay: ''
+      }).appendTo($('#video_wrap'));
       $popup_video.fadeIn();
       $popup_video.addClass('active');
       $section_home.addClass('play_video_popup');
@@ -384,6 +399,7 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
       $popup.removeClass('active');
       $section_home.removeClass('play_video_popup');
       $.fn.fullpage.setAllowScrolling(true);
+      $video_iframe.remove();
     });
 
     /*Preorder Popups*/
