@@ -305,11 +305,13 @@
 <script type="text/javascript">
 
 if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browserType.isWindowsPhone()) {
+  var mobile_device = true;
   $('<img/>', {
     src: 'images/mobile_invisibles.gif',
     alt: 'invisibles'
   }).appendTo($('.text_masc'));
 } else {
+  mobile_device = false;
   $('<video/>', {
     id: 'cloud_video',
     loop: 'loop',
@@ -526,9 +528,9 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
     // bind events
     var playButton = document.getElementById("play-button");
     playButton.addEventListener("click", function() {
-      setTimeout(function () {
+      if (!mobile_device) {
         player.playVideo();
-      }, 1000);
+      }
     });
 
     var pauseButton = document.getElementById("pause-button");
