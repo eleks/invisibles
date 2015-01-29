@@ -1507,6 +1507,10 @@ h2.small_title {
   .popup_form .step_1 .desc {
     width: 70%;
   }
+  .popup_video iframe {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {

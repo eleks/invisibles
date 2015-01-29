@@ -692,7 +692,8 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
   .top-menu li { margin: 0 15px; }
   .slick-slide .tips { letter-spacing: 4px; }
   .slick-slide.slick-center h3 { font-size: 43px; letter-spacing: 5px; }
-  .desc, .popup_form .step_1 .desc { width: 70%; } }
+  .desc, .popup_form .step_1 .desc { width: 70%; }
+  .popup_video iframe { height: 100%; width: 100%; } }
 @media (max-width: 768px) { .container { padding: 0 30px; }
   .toggle_menu, #home_link, .social-buttons.mobile_soc { display: block; }
   .header_inner { background-color: #fff; display: none; height: calc(100vh - 50px); margin: 0 -10px; padding: 25px 0 10px; position: relative; z-index: 999; }
