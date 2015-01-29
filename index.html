@@ -372,7 +372,6 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
     /*show video*/
     $play_video.click(function () {
       $popup_video.fadeIn();
-	  //$popup_video.css('z-index','10');
       $popup_video.addClass('active');
       $section_home.addClass('play_video_popup');
       $.fn.fullpage.setAllowScrolling(false);
@@ -389,7 +388,6 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
     /*close popup*/
     $close_popup.click(function () {
       $popup_video.fadeOut(300);
-	  //$popup_video.css('z-index','-10');
       $popup_video.removeClass('active');
       $section_home.removeClass('play_video_popup');
       $.fn.fullpage.setAllowScrolling(true);
@@ -513,45 +511,39 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
  
-  
-  var player123;
   function onYouTubeIframeAPIReady() {
   
-	player123 = new YT.Player('video', {
+	var ytplayer = new YT.Player('video', {
           videoId: 'Q1sfkm6WogQ',
 		  height: '480',
           width: '853',
           events: {
             'onReady': onPlayerReady
-          }
+          },
+		  playerVars: {
+			'showinfo': 0,
+			'rel': 0
+		  }
         });
   }
   
   function onPlayerReady(event) {
-    
+    	
     var playButton = document.getElementById("play-button");
     playButton.addEventListener("click", function() {
-	
-	player123.playVideo();
-	
-	if (isMobileDevice) {
-		// black magic. don't do this at home. by MM
-		$(".popup_video").hide();	    
-		setTimeout(function () {
-				player123.stopVideo();
-				$(".popup_video").fadeIn();
-				player123.playVideo();
-			}, 650);
+		if (!isMobileDevice) {
+			// mobile devices often don't support autoplay etc
+			// https://developers.google.com/youtube/iframe_api_reference#Mobile_considerations
+			event.target.playVideo();
 		}
-	});		
+	}
 	
-
     var pauseButton = document.getElementById("pause-button");
     pauseButton.addEventListener("click", function() {
-      player123.stopVideo();
+      event.target.stopVideo();
     });
-
   }
+
 </script>
 
 <!--Google Annalytics-->
