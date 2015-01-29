@@ -610,6 +610,10 @@ h2.small_title {
   }
   .text_masc {
     height: 20%;
+    position: relative;
+    img {
+      max-width: 100%;
+    }
   }
   .desc {
     color: #c3c3c3;

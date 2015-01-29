@@ -14,7 +14,6 @@
   <meta property="og:url" content="http://invisibles.eleks.com" />
   <meta property="og:description" content="Wearable & mobile technology reimagined with Invisibles by ELEKS. Let technology disappear. Meet the future of wearables!" />
 
-
   <style>
     .preloader {
       background-color: #fff;
@@ -88,11 +87,7 @@
 
 <div id="fullpage">
   <div class="section" id="section_home">
-    <div class="video_wrap">
-      <video id="cloud_video" loop autoplay preload="auto">
-        <source type="video/mp4" src="http://media.eleks.com/media/Default/invisibles/video/cloud.mp4">
-      </video>
-    </div>
+    <div class="video_wrap"></div>
     <div class="masc"></div>
     <h1 class="big_title">Meet the</h1>
     <div class="text_masc"></div>
@@ -300,10 +295,31 @@
 <!--General scripts-->
 <script type="text/javascript" src="javascripts/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="javascripts/jquery.fullPage.min.js"></script>
-  <script type="text/javascript" src="javascripts/slick.min.js"></script>
+<script type="text/javascript" src="javascripts/slick.min.js"></script>
+<script type="text/javascript">var eleks = {};</script>
+<script type="text/javascript" src="javascripts/browser-type.js"></script>
 <!--End General scripts-->
 
 <script type="text/javascript">
+
+if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browserType.isWindowsPhone()) {
+  $('<img/>', {
+    src: 'images/mobile_invisibles.gif',
+    alt: 'invisibles'
+  }).appendTo($('.text_masc'));
+} else {
+  $('<video/>', {
+    id: 'cloud_video',
+    loop: 'loop',
+    autoplay: 'autoplay',
+    html:  '<source type="video/mp4" src="http://media.eleks.com/media/Default/invisibles/video/cloud.mp4">'
+  }).appendTo($('.video_wrap'));
+  /*Play home page video*/
+  setTimeout(function () {
+    document.querySelector('#cloud_video').play();
+  }, 1000);
+}
+
   $(document).ready(function() {
     var scrollAllow = true,
         $header_inner = $('.header_inner'),
@@ -351,6 +367,7 @@
       $popup_video.fadeIn();
       $popup_video.addClass('active');
       $section_home.addClass('play_video_popup');
+      $.fn.fullpage.setAllowScrolling(false);
     });
 
     /*pusle preorder now link */
@@ -366,6 +383,7 @@
       $popup.fadeOut(300);
       $popup.removeClass('active');
       $section_home.removeClass('play_video_popup');
+      $.fn.fullpage.setAllowScrolling(true);
     });
 
     /*Preorder Popups*/
@@ -470,9 +488,8 @@
     ]
     });
 
-    /*Play home page video*/
+    /*added body class load*/
     window.onload = function() {
-      document.querySelector('#cloud_video').play();
       $('body').addClass('loaded');
     };
   });
@@ -526,6 +543,11 @@
   /*Count click for show subscribe form*/
   $('.preorder_now_link').on('click', function() {
     ga('send', 'event', 'button', 'click', 'preorder_now');
+  });
+
+  /*Count click for preorder_now_link top link */
+  $('.preorder_now').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'preorder_now_top_link');
   });
 
   /*Play btn click*/
