@@ -428,10 +428,12 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
       responsive: 300,
       afterLoad: function(anchorLink, index){
         //first slide of the second section
-        if(index == 1){
-          document.querySelector('#cloud_video').play();
-        } else {
-          document.querySelector('#cloud_video').pause();
+        if (($('#cloud_video').length > 0)) {
+          if(index == 1){
+            document.querySelector('#cloud_video').play();
+          } else {
+            document.querySelector('#cloud_video').pause();
+          }
         }
       }
     });
