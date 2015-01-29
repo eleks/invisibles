@@ -324,12 +324,24 @@
       $(this).toggleClass('open');
       $.fn.fullpage.setAllowScrolling(scrollAllow);
     });
-    $('#home_link, .open + div + div .top-menu ul li a, .open + div + div .preorder_now').click(function () {
+
+
+
+    $( "body" ).delegate( "#home_link, .open + div + div .top-menu ul li a, .open + div + div .preorder_now", "click", function() {
       scrollAllow = true;
       $header_inner.fadeOut(200);
       $toggle_menu.removeClass('open');
       $.fn.fullpage.setAllowScrolling(scrollAllow);
     });
+
+
+/*
+    $('#home_link, .open + div + div .top-menu ul li a, .open + div + div .preorder_now').on('click', function () {
+      scrollAllow = true;
+      $header_inner.fadeOut(200);
+      $toggle_menu.removeClass('open');
+      $.fn.fullpage.setAllowScrolling(scrollAllow);
+    });*/
 
     /*show share popup*/
     $('#share_btn').click(function () {
