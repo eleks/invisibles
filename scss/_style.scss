@@ -311,6 +311,13 @@ h2.small_title {
     padding-top: 0 !important;
   }
 }
+.popup_video {
+  display: block;
+  z-index: -1;
+  &.active {
+    z-index: 999;
+  }
+}
 .icon-close {
   cursor: pointer;
   position: absolute;
@@ -1516,7 +1523,7 @@ h2.small_title {
     width: 70%;
   }
   .popup_video iframe {
-    height: 100% !important;
+    /*height: 100% !important;*/
     width: 100% !important;
   }
 }
