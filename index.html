@@ -4,11 +4,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Invisibles – the future of wearables| ELEKS</title>
-  <meta name="description" content="Wearable & mobile technology reimagined with Invisibles by ELEKS. Check out how we make technology disappear. Meet the unexpected future of wearables!">
+  <title>Invisibles – The Future of Wearables| ELEKS</title>
+  <meta name="description" content="Wearable & mobile technology reimagined with Invisibles by ELEKS. Let technology disappear. Meet the future of wearables!">
   <meta name="keywords" content="Invisibles, wearables, mobility, ELEKS, mobile applications, digital, augmented reality, mobile technology, mobile app development, wearable technology, user experience, smart watch, smart ring">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="author" content="Taras Peretiatko">
   <style>
     .preloader {
       background-color: #fff;
@@ -63,10 +62,10 @@
         <div class="share_txt">SHARE WITH FRIENDS</div>
         <ul class="list">
           <li>
-            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
+            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles – The Future of Wearables| ELEKS">Facebook</a>
           </li>
           <li>
-            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
+            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles – The Future of Wearables| ELEKS #wearables #invisibles #ELEKS http://invisibles.eleks.com/">Twitter</a>
           </li>
           <li>
             <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
@@ -202,10 +201,10 @@
         </div>
         <ul class="list">
           <li>
-            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
+            <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles – The Future of Wearables| ELEKS">Facebook</a>
           </li>
           <li>
-            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
+            <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles – The Future of Wearables| ELEKS #wearables #invisibles #ELEKS http://invisibles.eleks.com/">Twitter</a>
           </li>
           <li>
             <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
@@ -269,10 +268,10 @@
       <div class="share_txt">OR SHARE INVISIBLES</div>
       <ul class="list">
         <li>
-          <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles by ELEKS – Let the Technology disappear!">Facebook</a>
+          <a target="_blank" class="icon-facebook" href="http://www.facebook.com/share.php?u=http://invisibles.eleks.com/&title=Invisibles – The Future of Wearables| ELEKS">Facebook</a>
         </li>
         <li>
-          <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles by ELEKS – Let the Technology disappear!+http://invisibles.eleks.com">Twitter</a>
+          <a target="_blank" class="icon-twitter" href="http://twitter.com/intent/tweet?status=Invisibles – The Future of Wearables| ELEKS #wearables #invisibles #ELEKS http://invisibles.eleks.com/">Twitter</a>
         </li>
         <li>
           <a target="_blank" class="icon-google-plus" href="https://plus.google.com/share?url=http://invisibles.eleks.com">Google plus</a>
@@ -333,15 +332,6 @@
       $toggle_menu.removeClass('open');
       $.fn.fullpage.setAllowScrolling(scrollAllow);
     });
-
-
-/*
-    $('#home_link, .open + div + div .top-menu ul li a, .open + div + div .preorder_now').on('click', function () {
-      scrollAllow = true;
-      $header_inner.fadeOut(200);
-      $toggle_menu.removeClass('open');
-      $.fn.fullpage.setAllowScrolling(scrollAllow);
-    });*/
 
     /*show share popup*/
     $('#share_btn').click(function () {
@@ -531,14 +521,24 @@
     ga('send', 'event', 'button', 'click', 'preorder_now');
   });
 
+  /*Play btn click*/
+  $('#play-button').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'play_btn_click');
+  });
+
+  /*Contact us btn click*/
+  $('#contact_us').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'contact_us_btn_click');
+  });
+
   /*Count click for approve email*/
-  $('#mc-embedded-subscribe').on('click', function() {
-    ga('send', 'event', 'button', 'click', 'approve_email');
+  $('yep_preorder').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'yep_preorder');
   });
 
   /*Count click for no notify*/
-  $('.verification_form .no_notify').on('click', function() {
-    ga('send', 'event', 'button', 'click', 'no_notify');
+  $('.nope_preorder').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'nope_preorder');
   });
 
   /*Count click for eleks link*/
