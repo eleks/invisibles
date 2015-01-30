@@ -350,6 +350,7 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
 
   $(document).ready(function() {
     var scrollAllow = true,
+        $cloud_video = $('#cloud_video'),
         $header_inner = $('.header_inner'),
         $toggle_menu = $('.toggle_menu'),
         $play_video = $('.play_video'),
@@ -457,11 +458,11 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
       responsive: 300,
       afterLoad: function(anchorLink, index){
         //first slide of the second section
-        if (($('#cloud_video').length > 0)) {
+        if (($cloud_video.length > 0)) {
           if(index == 1){
-            document.querySelector('#cloud_video').play();
+            $cloud_video.play();
           } else {
-            document.querySelector('#cloud_video').pause();
+            $cloud_video.pause();
           }
         }
       }
@@ -565,7 +566,7 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
 	
     var pauseButton = document.getElementById("pause-button");
     pauseButton.addEventListener("click", function() {
-      event.target.stopVideo();
+      event.target.pauseVideo();
     });
   }
 
