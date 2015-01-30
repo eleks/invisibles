@@ -460,9 +460,11 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
         //first slide of the second section
         if (($cloud_video.length > 0)) {
           if(index == 1){
-            $cloud_video.play();
+            document.querySelector('#cloud_video').play();
+            $cloud_video.fadeIn(2000);
           } else {
-            $cloud_video.pause();
+            $cloud_video.fadeOut(500);
+            document.querySelector('#cloud_video').pause();
           }
         }
       }
