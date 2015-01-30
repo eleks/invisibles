@@ -621,6 +621,12 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
   $('#eleks_link').on('click', function() {
     ga('send', 'event', 'button', 'click', 'eleks_link');
   });
+
+  /*social networks analytics*/
+  ga('send', 'social', 'facebook', 'share', 'http://invisibles.eleks.com/');
+  ga('send', 'social', 'google+', 'share', 'http://invisibles.eleks.com/');
+  ga('send', 'social', 'twitter', 'tweet', 'http://invisibles.eleks.com/');
+  ga('send', 'social', 'linkedin', 'share', 'http://invisibles.eleks.com/');
 </script>
 <!--End Google Annalytics-->
 </body>

@@ -730,7 +730,7 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
   #section_about h1.big_title { font-size: 24px; letter-spacing: 4px; }
   #section_about h2 { font-size: 25px; margin-bottom: 10px; }
   #section_about .desc { font-size: 16px; line-height: 20px; }
-  #section_about.active .step_2 { padding: 0 20px; } }
+  #section_about .step_2 { padding: 0 20px; } }
 @media (max-width: 460px) { h1.big_title { font-size: 30px; letter-spacing: 10px; line-height: 45px; }
   .popup_form .step_4 h1.big_title { font-size: 20px; letter-spacing: 10px; line-height: 35px; }
   #section_features .container { padding: 0 20px; }
@@ -748,7 +748,7 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
   .icon_down { margin-top: 10px; position: static; }
   .popup_form .step_4 .icon_down { margin-top: -30px; position: static; }
   .popup_form .step_4 .any_questions { position: static; } }
-@media (max-height: 600px) { #section_product .container .small_title { margin-top: -50px; }
+@media (max-height: 400px) { #section_product .container .small_title { margin-top: -50px; }
   .product-slider .slick-slide img { max-width: 15%; }
   .header_inner { padding: 10px 0; }
   .top-menu { height: 40%; }

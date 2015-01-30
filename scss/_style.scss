@@ -1685,10 +1685,8 @@ h2.small_title {
       font-size: 16px;
       line-height: 20px;
     }
-    &.active {
-      .step_2 {
-        padding: 0 20px;
-      }
+    .step_2 {
+      padding: 0 20px;
     }
   }
 }
@@ -1781,7 +1779,7 @@ h2.small_title {
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 400px) {
   #section_product .container .small_title {
     margin-top: -50px;
   }
@@ -1805,3 +1803,5 @@ h2.small_title {
     margin: 4vh 0 3vh;
   }
 }
+
+
