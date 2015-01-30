@@ -131,9 +131,9 @@
       <div class="fp-section fp-table">
         <h2 class="thin">The best technology is the one you don’t notice.</h2>
         <div class="desc">Although wearable devices are serving us well, they keep moving forward. The revolutionary technology, Invisibles, enables a whole new world of possibilities. As a result, no more worries about materials, color, design, limited battery life and the other inconveniences of wearables.</div>
+        <div class="icon_down">&#8595;</div>
       </div>
     </div>
-    <div class="icon_down">&#8595;</div>
   </div>
   <div class="section" id="section_features">
     <div class="container">
@@ -320,6 +320,7 @@
 <script type="text/javascript" src="javascripts/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="javascripts/jquery.fullPage.min.js"></script>
 <script type="text/javascript" src="javascripts/slick.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.slimscroll.min.js"></script>
 <script type="text/javascript">var eleks = {};</script>
 <script type="text/javascript" src="javascripts/browser-type.js"></script>
 <!--End General scripts-->
@@ -371,7 +372,7 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
       /*show/hide menu*/
     $toggle_menu.click(function () {
       scrollAllow = !scrollAllow;
-      $header_inner.slideToggle(200);
+      $header_inner.fadeToggle(200);
       $(this).toggleClass('open');
       $.fn.fullpage.setAllowScrolling(scrollAllow);
     });
@@ -454,7 +455,9 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
     $('#fullpage').fullpage({
       anchors: ['home', 'about', '', '', 'features', 'products'],
       menu: '#menu',
-      /*scrollOverflow: true,*/
+      paddingTop: '30px',
+      paddingBottom: '30px',
+      scrollOverflow: true,
       responsive: 300,
       afterLoad: function(anchorLink, index){
         //first slide of the second section

@@ -720,18 +720,19 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
   .popup_form .step_3 .big_title { font-size: 45px; letter-spacing: 7px; }
   #section_features .slick-slide .mask { font-size: 60px; letter-spacing: 4px; }
   #section_features .slick-slide.slick-active .mask { letter-spacing: 8px; }
+  #section_home .text_masc { height: auto; margin-bottom: 5px; }
   .slick-slide img { max-width: 45%; }
   h1.big_title { font-size: 30px; line-height: 50px; }
   .step_4.show_step_4 .big_title > span, .step_4.show_step_4 .big_title > span + span { display: inline; } }
 @media (max-width: 600px) { #section_features .mask { font-size: 45px; } }
 @media (max-width: 480px) { h2.small_title { font-size: 16px; }
   #section_home .big_title { font-size: 20px; letter-spacing: 10px; margin: 20px 0 0; }
-  #section_home .text_masc { height: auto; margin-bottom: 5px; }
   #section_about h1.big_title { font-size: 24px; letter-spacing: 4px; }
   #section_about h2 { font-size: 25px; margin-bottom: 10px; }
   #section_about .desc { font-size: 16px; line-height: 20px; }
   #section_about.active .step_2 { padding: 0 20px; } }
 @media (max-width: 460px) { h1.big_title { font-size: 30px; letter-spacing: 10px; line-height: 45px; }
+  .popup_form .step_4 h1.big_title { font-size: 20px; letter-spacing: 10px; line-height: 35px; }
   #section_features .container { padding: 0 20px; }
   #section_features .mask { font-size: 40px; }
   .loaded #section_home .big_title { letter-spacing: 15px; }
@@ -743,6 +744,17 @@ h2.small_title { font-family: 'ProximaNovaBold'; font-size: 22px; line-height: 2
   #section_features .slick-slide.slick-active .mask { letter-spacing: 3px; } }
 @media (max-width: 360px) and (max-height: 600px) { #section_home .masc { background-position: center 26%; }
   #section_home .desc { font-size: 15px; letter-spacing: 8px !important; line-height: 20px; margin-bottom: 25px; } }
+@media (max-height: 600px) { #section_features .small_title { margin-top: 30px; margin-bottom: -30px; }
+  .icon_down { margin-top: 10px; position: static; }
+  .popup_form .step_4 .icon_down { margin-top: -30px; position: static; }
+  .popup_form .step_4 .any_questions { position: static; } }
+@media (max-height: 600px) { #section_product .container .small_title { margin-top: -50px; }
+  .product-slider .slick-slide img { max-width: 15%; }
+  .header_inner { padding: 10px 0; }
+  .top-menu { height: 40%; }
+  .top-menu ul li a { font-size: 3.5vh; }
+  .preorder_now { font-size: 4vh; }
+  .social-buttons .share_txt { font-size: 3.5vh; margin: 4vh 0 3vh; } }
 /* ========================================================================== Helper classes ========================================================================== */
 /* Image replacement */
 .ir { background-color: transparent; border: 0; overflow: hidden; /* IE 6/7 fallback */ *text-indent: -9999px; }
