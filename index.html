@@ -229,9 +229,9 @@
 <div class="popup popup_video t_center">
   <div id="pause-button" class="icon-close close_popup_video"></div>
   <div class="fp-section fp-table step_1">
-    <div id="video" > </div>
-    <!--<iframe id="video" width="853" height="480" src="https://www.youtube.com/embed/Q1sfkm6WogQ?showinfo=0&enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>
-    -->
+    <!--<div id="video" > </div>-->
+    <iframe id="video" width="853" height="480" src="https://www.youtube.com/embed/Q1sfkm6WogQ?showinfo=0&enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>
+
   </div>
 </div>
 <!--End Popup Video-->
@@ -514,7 +514,7 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
   function onYouTubeIframeAPIReady() {
   
 	var ytplayer = new YT.Player('video', {
-          videoId: 'Q1sfkm6WogQ',
+/*          videoId: 'Q1sfkm6WogQ',*/
 		  height: '480',
           width: '853',
           events: {
