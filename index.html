@@ -14,6 +14,27 @@
   <meta property="og:url" content="http://invisibles.eleks.com" />
   <meta property="og:description" content="Wearable & mobile technology reimagined with Invisibles by ELEKS. Let technology disappear. Meet the future of wearables!" />
 
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="favicon/android-chrome-manifest.json">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
   <style>
     .preloader {
       background-color: #fff;
@@ -387,8 +408,8 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
 
     /*close popup*/
     $close_popup.click(function () {
-      $popup_video.fadeOut(300);
-      $popup_video.removeClass('active');
+      $popup.fadeOut(300);
+      $popup.removeClass('active');
       $section_home.removeClass('play_video_popup');
       $.fn.fullpage.setAllowScrolling(true);
     });
@@ -432,6 +453,7 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
     $('#fullpage').fullpage({
       anchors: ['home', 'about', '', '', 'features', 'products'],
       menu: '#menu',
+      /*scrollOverflow: true,*/
       responsive: 300,
       afterLoad: function(anchorLink, index){
         //first slide of the second section
@@ -480,6 +502,8 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
       asNavFor: '.product-slider-nav'
     });
     $('.product-slider-nav').slick({
+      centerMode: true,
+      centerPadding: '50px',
       slidesToShow: 3,
       slidesToScroll: 0,
       asNavFor: '.product-slider',
@@ -491,6 +515,7 @@ if (eleks.browserType.isMobile() || eleks.browserType.isTablet() || eleks.browse
         {
           breakpoint: 700,
           settings: {
+            centerPadding: '5px',
             slidesToShow: 1
           }
         }

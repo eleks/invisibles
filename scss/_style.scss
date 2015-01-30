@@ -38,9 +38,9 @@ header {
   display: none;
   height: 33px;
   left: 0;
-  padding: 10px;
+  padding: 20px;
   position: absolute;
-  top: 0;
+  top: -4px;
   width: 45px;
   z-index: 1;
   .toggle_menu_icon {
@@ -48,7 +48,8 @@ header {
     display: block;
     height: 1px;
     margin-bottom: 6px;
-    margin-top: 6px;
+    margin-left: -10px;
+    margin-top: 0;
     position: relative;
     width: 25px;
     -webkit-transition-property: background-color,  -webkit-transform;
@@ -1243,7 +1244,7 @@ h2.small_title {
       max-height: 100%;
       max-width: 100%;
       opacity: 0;
-      padding: 10px;
+      padding: 20px;
     }
   }
   .step_3 {
@@ -1306,6 +1307,9 @@ h2.small_title {
       color: #666;
       top: 2%;
       @include translateY(10px);
+    }
+    .fp-scrollable {
+      padding: 30px 0;
     }
   }
   &.active {
@@ -1516,8 +1520,8 @@ h2.small_title {
     width: 70%;
   }
   .popup_video iframe {
-    /*height: 100% !important;*/
-    width: 100% !important;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -1651,13 +1655,23 @@ h2.small_title {
   }
 }
 @media (max-width: 480px) {
-  #section_home .big_title {
-    letter-spacing: 10px;
-    margin-top: 40px;
+  h2.small_title {
+    font-size: 16px;
+  }
+  #section_home {
+    .big_title {
+      font-size: 20px;
+      letter-spacing: 10px;
+      margin: 20px 0 0;
+    }
+    .text_masc {
+      height: auto;
+      margin-bottom: 5px;
+    }
   }
   #section_about {
     h1.big_title {
-      font-size: 26px;
+      font-size: 24px;
       letter-spacing: 4px;
     }
     h2 {
@@ -1693,6 +1707,11 @@ h2.small_title {
   .loaded #section_home .big_title {
     letter-spacing: 15px;
   }
+  #section_product {
+    .container {
+      padding: 20px;
+    }
+  }
   #section_about h2 {
     margin-top: 0;
   }
@@ -1705,9 +1724,6 @@ h2.small_title {
   #section_home {
     .masc {
       background-position: center 36%;
-    }
-    .text_masc {
-      height: 15%;
     }
   }
   #section_features {
@@ -1729,12 +1745,6 @@ h2.small_title {
   #section_home {
     .masc {
       background-position: center 26%;
-    }
-    .big_title {
-      margin-top: 40px;
-    }
-    .text_masc {
-      height: 13%;
     }
     .desc {
       font-size: 15px;
