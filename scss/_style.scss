@@ -740,11 +740,12 @@ h2.small_title {
     font-weight: normal;
     line-height: 32px;
     opacity: 0;
+    @include translateY(70px);
   }
   .desc {
     color: #ddd;
     opacity: 0;
-    @include translateY(10px);
+    @include translateY(40px);
   }
   .container {
     bottom: 0;
@@ -768,10 +769,10 @@ h2.small_title {
       }
       &.step_2 {
         h2 {
-          @include animation(opacity 1s 4s forwards ease-out);
+          @include animation(about_thin_title 2.7s 4s forwards ease-out);
         }
         .desc {
-          @include animation(about_desc 1s 5s forwards ease-out);
+          @include animation(about_desc 0.9s 5.8s forwards ease-out);
         }
       }
     }
