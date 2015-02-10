@@ -73,12 +73,12 @@ $(document).ready(function() {
   });
 
   /*pusle preorder now link */
-  $btn_preorder_now.mousedown(function(){
+  /*$btn_preorder_now.mousedown(function(){
     $preorder_now_link.addClass('pulse');
   });
   $btn_preorder_now.mouseup(function(){
     $preorder_now_link.removeClass('pulse');
-  });
+  });*/
 
   /*close popup*/
   $close_popup.click(function () {
@@ -89,7 +89,7 @@ $(document).ready(function() {
   });
 
   /*Preorder Popups*/
-  $preorder_now_link.click(function () {
+  $( "html" ).delegate( ".preorder_now_link, .fp-viewing-products .preorder_now", "click", function() {
     $popup_form.fadeIn(200);
     $popup_form.addClass('active');
     setTimeout( function() {
