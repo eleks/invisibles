@@ -1291,6 +1291,7 @@ h2.small_title {
       bottom: 2%;
       color: #5a5a5a;
       font-size: 14px;
+      line-height: 17px;
       left: 0;
       opacity: 0;
       position: absolute;
@@ -1316,6 +1317,24 @@ h2.small_title {
   &.active {
     .fp-section {
       opacity: 1;
+    }
+  }
+}
+
+/*projects_list*/
+.projects_list {
+  opacity: 0;
+  margin-bottom: 50px;
+  li {
+    display: inline-block;
+    margin: 0 1.5%;
+    a {
+      color: #fff;
+      display: block;
+      font-size: 12px;
+      letter-spacing: 6px;
+      line-height: 15px;
+      text-transform: uppercase;
     }
   }
 }
@@ -1356,17 +1375,20 @@ h2.small_title {
       }
     }
   }
-  .btn {
+  .projects_list {
     @include animation(opacity 0.5s 4s forwards ease-out);
   }
-  .social-buttons {
+  .btn {
     @include animation(opacity 0.5s 5s forwards ease-out);
   }
+  .social-buttons {
+    @include animation(opacity 0.5s 6s forwards ease-out);
+  }
   .any_questions {
-    @include animation(about_desc 1s 6.5s forwards ease-out);
+    @include animation(about_desc 1s 7.5s forwards ease-out);
   }
   .icon_down {
-    @include animation(about_desc .5s 6.5s forwards ease-out);
+    @include animation(about_desc .5s 7.5s forwards ease-out);
     &:hover {
       color: #fff;
       margin: -5px 0 0 -6px;
@@ -1659,6 +1681,9 @@ h2.small_title {
 @media (max-width: 600px) {
   #section_features .mask {
     font-size: 45px;
+  }
+  .projects_list {
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 480px) {
